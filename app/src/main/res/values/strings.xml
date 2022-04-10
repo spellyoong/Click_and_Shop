@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Click n\' Shop</string>
+    <string name="signUp"><u>Sign Up</u></string>
+
+    <!-- Notification fragment -->
+    <string name="notiHeader1">25 JUL PAYDAY SALES</string>
+    <string name="notiTxt1">25 Jul Payday Sale is coming in 1 week time!\nAttractive deal with up to 88% Off!\nMore than 1000 merchants participated.\nMark your calendar! T&amp;Cs apply.</string>
+    <string name="notiHeader2">OUM SPECIAL DEALS</string>
+    <string name="notiTxt2">To celebrate CBBR4106 Project launch, OUM is giving out vouchers worth up to RM 9,999. Grab yours today!\nClick here to understand more.</string>
+    <string name="notiHeader3">SHOP MALAYSIA ONLINE</string>
+    <string name="notiTxt3">A collaboration campaign substitude by Government under Budget 2021 to push online sales during the pandemic. Claim your SMO reward with Shopper.com and get a surprise free gift from us!</string>
+
+    <!-- Chat Activity 1 -->
+    <string name="chatHeader1">OUM Official Shop</string>
+    <string name="chatTxt1">Hello, thanks for contacting OUM Official.\nLet me know what I can assist you!</string>
+    <string name="chatHeader2">Click n\' Shop Customer Service</string>
+    <string name="chatTxt2">Hello there! Chat with me and I\'ll assist you with your needs.</string>
+
+    <!-- Chat Activity 2 -->
+    <string name="chatName1">Yoong Kai Leon</string>
+    <string name="conversationTxt1">Hello, Can I check something with you?</string>
+    <string name="chatName2">Admin</string>
+    <string name="conversationTxt2">Hello, thanks for contacting OUM Official.\n\nLet me know what I can assist you!</string>
+
+    <!-- Product -->
+    <string name="productName1">Cotton Washable Plain Assorted Three Layers Face Mask / Topeng Muka</string>
+    <string name="productDesc1">Our face mask is made from cotton material. 3D eagle Mouth Shape Design, make your nose feel comfortable and fits your face well and allow some space for proper breathing. Highly elastic and rubbery earloop. Reusable, fashionable and can be worn in adifferent kinds of weather. Suitable for Bicycle Motercycle Riding, Outdoor Sports, Snowboard, Cycling, Running, Hiking, Camping, Skiing, Climbing, Fishing, Hungting, Jogging, Motorcycling and so on.</string>
+    <string name="productName2">Ergonomics Backrest Chair Comfortable Office Chair</string>
+    <string name="productDesc2">Our products are all in stock. You can place an order right away!\nFacing fabric: plastic\nChair foot material: stainless steel, nylon\nCushion padding: latex mattress\nAdditional features: rotatable</string>
+    <string name="productName3">Ipoh 2 in 1 Chang Jiang White Coffee (10 Sachets x 30g)</string>
+    <string name="productDesc3">hang Jiang 2 in 1 White Coffee 10 sachets x 30g\nChang Jiang 2 in1 White Coffee is suitable for loving healthy coffee customers. Traditional white coffee and creamy milk taste, no sugar packaging, with additional sugar packet, can allocate own sweetness.</string>
+    <string name="productName4">MAGGI 2-Min Curry 5 Packs, 79g Each</string>
+    <string name="productDesc4">• 2-minute instant noodles • Contains 5 individual packets of 79g • Real curry taste • Source of wheat protein • Made with real chillies and 12 secret spices • Slow-cooked to perfection for great curry taste • With our springy noodle • Each serving (79g) contains 351kcal • HALAL certified Don\'t know what to eat? Cook yourself a delicious bowl of MAGGI® 2-Minute Noodles Curry. Made with real chillies and a secret blend of 12 spices, it is coupled together with our springy noodles made from Australian wheat grains that promises satisfaction with every slurp. Throw in your favourite fresh ingredients for a richer taste and a balanced meal. It’s no wonder that it is still a Malaysian favourite till today!</string>
+    <string name="productName5">Frozen Durian Musang King 1kg</string>
+    <string name="productDesc5">Durian sejuk beku / Frozen durian :\nMusang king\n1kg = 16 - 30 ulas/ pieces\nlemak manis / creamy sweet\nisi lebih tebal dari gred A / flesh thicker than grade A</string>
+    <string name="productDesc6">Power: 600W\n2-in-1 design\nTransparent dust cup\nLight and user-friendly design\nQuick release cord hook</string>
+    <string name="productDesc7">Specifications\nMaterial: 304 Stainless Steel\nSize: 22.5*6.5 cm\nCapacity: 500 ml</string>
+    <string name="productDesc8">- Kills 99.9% of germs, bacteria and viruses, including E. coli, salmonella and the flu virus\n- Deodorises by killing germs that cause odours\n- Controls mould and mildew on mattresses, pillows and shower curtains\n- Lasting fresh fragrance: Crisp Breeze\n- To disinfect: Spray over pre-cleaned surface for 2 to 3 seconds until covered with mist and allow to stand 10 minutes to air dry\n- To sanitise: Let stand for 30 seconds to control and prevent mould and mildew and their odours</string>
+    <string name="productDesc9">Our Aglio Olio sauce is handmade - All natural. Fresh. Healthy. It is a secret blend of six herbs and spices. For taste, we added a sprinkle of Himalayan salt. And the tiniest bit of salted fish caught from our own oceans.\nWe have created the tastiest flavor. Worry not a moment about preservatives, artificial flavors, MSG or coloring. We put health first.</string>
+    <string name="productDesc10">Stack em\' up! Because one is never enough when it comes to our delectable crisps made from 100% imported potatoes of the highest grade.</string>
+
+    <!-- Voucher -->
+    <string name="voucherHeader1">RM 20 VOUCHER</string>
+    <string name="voucherValidTxt1">Valid from 1 Mar 2022 to 31 Mar 2022</string>
+    <string name="voucherHeader2">FREE SHIPPING VOUCHER</string>
+    <string name="voucherValidTxt2">Valid from 15 Mar 2022 to 31 Mar 2022</string>
+    <string name="voucherTermsTxt">T&amp;Cs</string>
+
+    <!-- About -->
+    <string name="aboutHeader">About Click n\' Shop</string>
+    <string name="aboutTxt">\t\t\tThe project to develop is a mobile shopping application that serves all the shopping needs, namely Click n\' Shop. It is not just an ordinary shopping platform, but an app that offers a smarter way to shop by offering personalised experiences for every user. The key stakeholders of the entire project would be customers and brand partners. Leveraging on the reputation of brand partners, Click n\' Shop connects customers to the brands of their choice, assuring them to find 100% authentic products within the platform.\n\n\t\t\tThe project offers a complete shopping journey from finding their desired products, in-app secure checkout, tracking orders to product reviews. As ofr brand partners, the app offers the ability to create discounts and promotions, customise banners, as well as customise brand pages, to drive traffic especially during the festive season, allowing our customers to shop for the best deal. ultimately, this app served as a one-stop platform that brings convenience to our customers to acquire whatever they want right at their fingertips.</string>
+
+    <!-- Address -->
+    <string name="addressName1">Yoong Kai Leon</string>
+    <string name="addressTxt1">+60 10 5641 090\n51, Persiaran Tunku SS 2/31\nPetaling Jaya, Selangor, 46100</string>
+    <string name="addressName2">Leon Yoong</string>
+    <string name="addressTxt2">+60 12 3456 789\nResidence Aradia, Block A, 35-13,\nKepong, Kuala Lumpur, 68100</string>
+
+    <!-- Order -->
+    <string name="orderDate1">19 Mar 2022</string>
+    <string name="orderNumber1">#202298726</string>
+    <string name="orderAmount1">RM 999</string>
+    <string name="orderTrack1">Parcel is out for delivery.\nTracking number #125-12345675</string>
+    <string name="orderDate2">28 Feb 2022</string>
+    <string name="orderNumber2">#202298243</string>
+    <string name="orderAmount2">RM 999</string>
+    <string name="orderTrack2">Parcel has been delivered.</string>
+
+    <!-- Help -->
+    <string name="ques1">How do I start selling on Click n\' Shop?</string>
+    <string name="ans1">To start selling on Click n\' Shop, you must first create a seller account.\n\nYou can set up your shop via Click n\' Shop seller center to upload products, enable shipping options and setup marketing promotion for your shop.</string>
+    <string name="ques2">How can I apply my vouchers?</string>
+    <string name="ans2">You can select available voucher(s) during checkout.\n\nPlease take note that each voucher has it own Terms &amp; Conditions.</string>
+    <string name="ques3">How can I update my personal information?</string>
+    <string name="ans3">You can check and update your personal information by navigating to My Profile > My Details.</string>
+    <string name="ques4">How to apply for refunds?</string>
+    <string name="ans4">You may raise a refund request when you receive the product not more than 7 days with following conditions:\n1. wrong product (e.g wrong variant, different products, wrong size)\n2. faulty product\n3. incomplete product\n4. product with physical damage\n\nTo apply for a refund, you can navigate to My Profile > My Order. Click on your order, then click the "Request for refund" button at the bottom of the page.\nPlease specific the reason of the refund request and insert the picture proof of your claim.\n\nRefund request are subject to approval. You are advisable to chat with the seller before applying for refund.</string>
+    <string name="ques5">How can I contact Customer Service?</string>
+    <string name="ans5">To contact product seller customer service, you can click on the chat button from product page or shop page.\n\nTo contact Click n\' Shop Customer Service, you can proceed to My Profile > Chat, and look for the Click n\' Shop Customer Service.</string>
+
+</resources>

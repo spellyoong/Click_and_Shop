@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".highlightFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/mainHeaderRelLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="15dp">
+
+        <RelativeLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/cartIcon"
+            android:background="#EEEEEE"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@drawable/ic_search_icon" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/searchIcon"
+                android:background="@null"
+                android:hint="Search what you need"
+                android:textColorHint="@color/orange_1"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/cartIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@id/chatIcon"
+            android:padding="5dp"
+            android:src="@drawable/ic_shopping_cart_icon" />
+
+        <ImageView
+            android:id="@+id/chatIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_chat_icon" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/highlightScrollView"
+        android:layout_below="@id/mainHeaderRelLayout" >
+
+        <RelativeLayout
+            android:id="@+id/scrollContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/highlightBannerRelLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/bannerTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:text="Discover Latest Deals"
+                    android:fontFamily="@font/alata"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_below="@id/bannerTxt"
+                    android:layout_marginTop="8dp"
+                    android:paddingBottom="10dp"
+                    android:src="@drawable/highlight_banner" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/featuredStoresRelLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/highlightBannerRelLayout"
+                android:layout_marginTop="6dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/featuredStoresTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:text="Featured Stores"
+                    android:fontFamily="@font/alata"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/shop1Container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/featuredStoresTxt"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp">
+
+                    <ImageView
+                        android:id="@+id/shop1ProfilePic"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/oum_profile_pic" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_toRightOf="@id/shop1ProfilePic">
+
+                        <TextView
+                            android:id="@+id/shop1Name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="OUM Official Shop"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/active1Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/shop1Name"
+                            android:layout_marginTop="10dp"
+                            android:text="Active 1 hour ago"
+                            android:fontFamily="@font/abeezee"
+                            android:textColor="@color/grey_2"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/location1Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/active1Txt"
+                            android:text="Petaling Jaya"
+                            android:fontFamily="@font/abeezee"
+                            android:textColor="@color/grey_2"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/viewShop1Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="16dp"
+                            android:fontFamily="@font/alata"
+                            android:text="View Shop"
+                            android:textColor="@color/orange_1"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/highlight1Line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/shop1Container"
+                    android:background="@color/grey" />
+
+                <RelativeLayout
+                    android:id="@+id/shop2Container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/highlight1Line1"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp">
+
+                    <ImageView
+                        android:id="@+id/shop2ProfilePic"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/fruit_profile_pic" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_toRightOf="@id/shop2ProfilePic">
+
+                        <TextView
+                            android:id="@+id/shop2Name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/alata"
+                            android:text="Healthy Fruit Store"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/active2Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/shop2Name"
+                            android:layout_marginTop="10dp"
+                            android:text="Active 15 minutes ago"
+                            android:fontFamily="@font/abeezee"
+                            android:textColor="@color/grey_2"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/location2Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/active2Txt"
+                            android:text="Pahang"
+                            android:fontFamily="@font/abeezee"
+                            android:textColor="@color/grey_2"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/viewShop2Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="16dp"
+                            android:fontFamily="@font/alata"
+                            android:text="View Shop"
+                            android:textColor="@color/orange_1"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/highlight1Line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/shop2Container"
+                    android:background="@color/grey" />
+
+                <RelativeLayout
+                    android:id="@+id/shop3Container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/highlight1Line2"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp">
+
+                    <ImageView
+                        android:id="@+id/shop3ProfilePic"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/bakery_profile_pic" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_toRightOf="@id/shop3ProfilePic">
+
+                        <TextView
+                            android:id="@+id/shop3Name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/alata"
+                            android:text="Cake &amp; Bread Bakery"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/active3Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/shop3Name"
+                            android:layout_marginTop="10dp"
+                            android:text="Active 2 hours ago"
+                            android:fontFamily="@font/abeezee"
+                            android:textColor="@color/grey_2"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/location3Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/active3Txt"
+                            android:text="Ipoh"
+                            android:fontFamily="@font/abeezee"
+                            android:textColor="@color/grey_2"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/viewShop3Txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="16dp"
+                            android:fontFamily="@font/alata"
+                            android:text="View Shop"
+                            android:textColor="@color/orange_1"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/recommendContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/featuredStoresRelLayout"
+                android:layout_marginTop="6dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/recommendHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Recommended For You"
+                    android:textAllCaps="true"
+                    android:textColor="@color/orange_1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/recommendHeader">
+
+                    <com.example.clickandshop.ExpandableHeightGridView
+                        android:id="@+id/gridView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:horizontalSpacing="5dp"
+                        android:numColumns="2"
+                        android:verticalSpacing="5dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/blank_space"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_below="@id/recommendContainer"
+                android:background="@color/white" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

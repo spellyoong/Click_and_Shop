@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_button_bg"
+        android:translationZ="3dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="TOP"
+        android:textColor="@color/white"
+        android:fontFamily="@font/alata"
+        android:textSize="9sp" />
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/topProdRelLayout">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
+
+            <ImageView
+                android:id="@+id/topProdImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardView"
+            android:layout_marginTop="10dp"
+            android:background="@color/grey_4"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/topProdTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Name"
+                android:lines="4"
+                android:maxLines="3"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topProdTextView">
+
+                <TextView
+                    android:id="@+id/topSoldQtyTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abeezee"
+                    android:text="1.5"
+                    android:textColor="@color/grey_2"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/topSoldQtyTextView"
+                    android:fontFamily="@font/abeezee"
+                    android:text="k+ sold"
+                    android:textColor="@color/grey_2"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

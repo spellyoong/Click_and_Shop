@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profileFragment"
+    android:clickable="true"
+    android:background="@color/white">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/profileRelLayout"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/profileContainer">
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/profilePic"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/profile_pic" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/profilePic"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp">
+
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/actor"
+                    android:text="Yoong Kai Leon"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/profile_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profileName"
+                    android:fontFamily="@font/abeezee"
+                    android:text="spellyoong@oum.edu.my"
+                    android:textColor="@color/grey_3"
+                    android:textSize="14dp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/profileLine0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/profileContainer"
+            android:layout_marginTop="10dp"
+            android:background="@color/grey" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/profileLine0"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
+
+            <RelativeLayout
+                android:id="@+id/profileOrderContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp">
+
+                <ImageView
+                    android:id="@+id/orderIcon"
+                    style="@style/profileIconStyle"
+                    android:src="@drawable/ic_order_icon" />
+
+                <TextView
+                    style="@style/profileTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/orderIcon"
+                    android:text="My Order" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_back_arrow" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/profileLine1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/profileOrderContainer"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:id="@+id/profileDetailContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileLine1"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp">
+
+                <ImageView
+                    android:id="@+id/detailIcon"
+                    style="@style/profileIconStyle"
+                    android:src="@drawable/ic_detail_icon" />
+
+                <TextView
+                    style="@style/profileTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/detailIcon"
+                    android:text="My Details" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_back_arrow" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/profileLine2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/profileDetailContainer"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:id="@+id/profileLocationContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileLine2"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp">
+
+                <ImageView
+                    android:id="@+id/locationIcon"
+                    style="@style/profileIconStyle"
+                    android:src="@drawable/ic_location_icon" />
+
+                <TextView
+                    style="@style/profileTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/locationIcon"
+                    android:text="Delivery Address" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_back_arrow" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/profileLine3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/profileLocationContainer"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:id="@+id/profileVoucherContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileLine3"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp">
+
+                <ImageView
+                    android:id="@+id/voucherIcon"
+                    style="@style/profileIconStyle"
+                    android:src="@drawable/ic_voucher_icon" />
+
+                <TextView
+                    style="@style/profileTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/voucherIcon"
+                    android:text="Vouchers" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_back_arrow" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/profileLine4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/profileVoucherContainer"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:id="@+id/profileChatContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileLine4"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp">
+
+                <ImageView
+                    android:id="@+id/chatIcon"
+                    style="@style/profileIconStyle"
+                    android:src="@drawable/ic_chat_icon_black" />
+
+                <TextView
+                    style="@style/profileTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/chatIcon"
+                    android:text="Chat" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_back_arrow" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/profileLine5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/profileChatContainer"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:id="@+id/profileHelpContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileLine5"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp">
+
+                <ImageView
+                    android:id="@+id/helpIcon"
+                    style="@style/profileIconStyle"
+                    android:src="@drawable/ic_help_icon" />
+
+                <TextView
+                    style="@style/profileTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/helpIcon"
+                    android:text="Help" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_back_arrow" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/profileLine6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/profileHelpContainer"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:id="@+id/profileAboutContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profileLine6"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp">
+
+                <ImageView
+                    android:id="@+id/aboutIcon"
+                    style="@style/profileIconStyle"
+                    android:src="@drawable/ic_about_icon" />
+
+                <TextView
+                    style="@style/profileTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/aboutIcon"
+                    android:text="About" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_back_arrow" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/profileLine7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/profileAboutContainer"
+                android:layout_marginBottom="18dp"
+                android:background="@color/grey" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

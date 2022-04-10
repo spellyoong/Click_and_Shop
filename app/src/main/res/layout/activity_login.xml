@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/loginBanner"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:alpha="0.75"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_banner" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginBanner"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="16dp">
+
+        <TextView
+            android:id="@+id/loginIntroTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="100dp"
+            android:paddingBottom="10dp"
+            android:text="Shop everything you need with Click n' Shop"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginIntroTxt"
+            android:layout_marginTop="16dp"
+            android:text="Email" />
+
+        <EditText
+            android:id="@+id/inputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtEmail"
+            android:hint="Enter your email address" />
+
+        <TextView
+            android:id="@+id/txtPasword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/inputEmail"
+            android:layout_marginTop="16dp"
+            android:text="Password" />
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtPasword"
+            android:hint="Enter your password"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/forgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/inputPassword"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:text="Forgot password?" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forgotPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/my_button_bg"
+            android:text="Log In"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginButton"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:text="@string/signUp" />
+
+        <TextView
+            android:id="@+id/socialTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signUp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/grey_3"
+            android:text="Or connect with social media" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/socialTxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/googleBtn"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/google_button_bg"
+                android:text="Google"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/google_blue"
+                app:icon="@drawable/ic_google_button"
+                app:iconPadding="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fbBtn"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/googleBtn"
+                android:background="@drawable/facebook_button_bg"
+                android:text="Facebook"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/facebook_blue"
+                app:icon="@drawable/ic_facebook_button"
+                app:iconPadding="10dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

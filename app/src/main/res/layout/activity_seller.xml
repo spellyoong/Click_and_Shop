@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".SellerActivity"
+    android:background="@color/grey">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sellerScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/sellerBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="220dp"
+                android:foreground="@drawable/seller_banner_fg"
+                android:scaleType="centerCrop"
+                android:src="@drawable/seller_banner" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/sellerInfo">
+
+                <ImageView
+                    android:id="@+id/sellerProfilePic"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/oum_profile_pic" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+                    android:layout_toRightOf="@id/sellerProfilePic">
+
+                    <TextView
+                        android:id="@+id/shopName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="OUM Official Shop"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/activeTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/shopName"
+                        android:layout_marginTop="10dp"
+                        android:text="Active 1 hour ago"
+                        android:fontFamily="@font/abeezee"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/locationTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/activeTxt"
+                        android:text="Petaling Jaya"
+                        android:fontFamily="@font/abeezee"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/chatBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/seller_chat_button_bg"
+                        android:fontFamily="@font/abeezee"
+                        android:minHeight="27dp"
+                        android:text="Chat"
+                        android:textAllCaps="false"
+                        android:textColor="@color/orange_1"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sellerInfo"
+                android:id="@+id/sellerRating"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overall Rating"
+                        android:fontFamily="@font/alata"
+                        android:textSize="14sp"
+                        android:textColor="@color/white" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.9 / 5.0"
+                        android:fontFamily="@font/abeezee"
+                        android:textSize="14sp"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/seller_rate_bg"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery"
+                        android:fontFamily="@font/alata"
+                        android:textSize="14sp"
+                        android:textColor="@color/white" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.9 / 5.0"
+                        android:fontFamily="@font/abeezee"
+                        android:textSize="14sp"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seller Service"
+                        android:fontFamily="@font/alata"
+                        android:textSize="14sp"
+                        android:textColor="@color/white" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.9 / 5.0"
+                        android:fontFamily="@font/abeezee"
+                        android:textSize="14sp"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sellerCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sellerBanner"
+                android:background="@drawable/seller_category_line">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/seller_category_bg"
+                    android:fontFamily="@font/alata"
+                    android:gravity="center"
+                    android:padding="9dp"
+                    android:text="Shop"
+                    android:textColor="@color/orange_1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:gravity="center"
+                    android:padding="9dp"
+                    android:text="Products"
+                    android:textColor="@color/orange_1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:gravity="center"
+                    android:padding="9dp"
+                    android:text="Categories"
+                    android:textColor="@color/orange_1"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/topProductContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sellerCategory"
+                android:paddingTop="6dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/topProductHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="BEST-SELLING"
+                    android:textAllCaps="true"
+                    android:textColor="@color/orange_1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/topProductHeader"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/campaign_banner"
+                android:layout_below="@id/topProductContainer"
+                android:scaleType="centerCrop"
+                android:id="@+id/campaignBanner" />
+
+            <RelativeLayout
+                android:id="@+id/recommendContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/campaignBanner"
+                android:paddingTop="6dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/recommendHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="RAYA SPECIAL"
+                    android:textAllCaps="true"
+                    android:textColor="@color/orange_1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/recommendHeader">
+
+                    <com.example.clickandshop.ExpandableHeightGridView
+                        android:id="@+id/gridView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:horizontalSpacing="5dp"
+                        android:numColumns="2"
+                        android:verticalSpacing="5dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/sellerRelLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/sellerSubContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp">
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_back_arrow_1" />
+
+            <RelativeLayout
+                android:id="@+id/searchLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toLeftOf="@id/cartIcon"
+                android:layout_toRightOf="@id/backArrow"
+                android:background="#EEEEEE"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:src="@drawable/ic_search_icon" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/searchIcon"
+                    android:background="@null"
+                    android:hint="Search in shop"
+                    android:textColorHint="@color/orange_1"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/cartIcon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_shopping_cart_icon" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    
+</RelativeLayout>

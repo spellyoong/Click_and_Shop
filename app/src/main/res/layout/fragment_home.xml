@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homeFragment"
+    android:background="@color/grey">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainHeaderRelLayout"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="15dp"
+        android:background="@color/white" >
+
+        <RelativeLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/cartIcon"
+            android:background="#EEEEEE"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@drawable/ic_search_icon" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/searchIcon"
+                android:background="@null"
+                android:hint="Search what you need"
+                android:textColorHint="@color/orange_1"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/cartIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@id/chatIcon"
+            android:padding="5dp"
+            android:src="@drawable/ic_shopping_cart_icon" />
+
+        <ImageView
+            android:id="@+id/chatIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_chat_icon" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainHeaderRelLayout">
+
+        <RelativeLayout
+            android:id="@+id/scrollContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/heroBanner"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hero_banner" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/heroBanner"
+                android:id="@+id/allCatContainer"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/catTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:text="Click n' Shop" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/catTxt"
+                    android:orientation="horizontal"
+                    android:padding="15dp"
+                    android:id="@+id/catRow1">
+
+                    <RelativeLayout
+                        android:id="@+id/cat1Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/cat1Icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_hot_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cat1Icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="Hot Deals"
+                            android:textColor="@color/red"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/cat2Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/cat2Icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_essential_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cat2Icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="Essential"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/cat3Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/cat3Icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_sport_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cat3Icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="Sport"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/cat4Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/cat4Icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_beauty_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cat4Icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="Beauty"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/cat5Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/cat5Icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_game_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cat5Icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="Gaming"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/catRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/catRow1"
+                    android:orientation="horizontal"
+                    android:padding="15dp">
+
+                    <RelativeLayout
+                        android:id="@+id/cat6Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/cat6Icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_electronics_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cat6Icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="Electronics"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/cat7Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/cat7Icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_fashion_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cat7Icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="Fashion"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/cat8Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/cat8Icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_toy_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cat8Icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="Toys, Kids &amp; Baby"
+                            android:textAlignment="center"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/cat9Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/cat9Icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_living_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cat9Icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="Home &amp; Living"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/cat10Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/cat10Icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_health_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cat10Icon"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="1dp"
+                            android:text="Health"
+                            android:textAlignment="center"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/topProductContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/allCatContainer"
+                android:layout_marginTop="6dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/topProductHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="TOP PRODUCTS"
+                    android:textAllCaps="true"
+                    android:textColor="@color/orange_1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/topProductHeader"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/recommendContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topProductContainer"
+                android:layout_marginTop="6dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/recommendHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Recommended For You"
+                    android:textAllCaps="true"
+                    android:textColor="@color/orange_1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/recommendHeader">
+
+                    <com.example.clickandshop.ExpandableHeightGridView
+                        android:id="@+id/gridView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:horizontalSpacing="5dp"
+                        android:numColumns="2"
+                        android:verticalSpacing="5dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/blank_space"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_below="@id/recommendContainer"
+                android:background="@color/white" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2.5dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:buttonTint="@color/orange_1"
+            android:checked="true" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp"
+            android:layout_toRightOf="@id/checkBox"
+            android:id="@+id/cardView">
+
+            <ImageView
+                android:id="@+id/prodImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/cardView"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/prodNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/prodPriceTxt"
+                android:fontFamily="@font/poppins"
+                android:lines="3"
+                android:maxLines="2"
+                android:paddingRight="5dp"
+                android:text="Name"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/prodPriceTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/prodPriceTextView"
+                android:layout_toLeftOf="@id/prodPriceTextView"
+                android:fontFamily="@font/abeezee"
+                android:text="RM "
+                android:textColor="@color/orange_1"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/prodPriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/abeezee"
+                android:text="10.0"
+                android:textColor="@color/orange_1"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/qtyContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/prodNameTextView"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/qtyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abeezee"
+                    android:text="Quantity"
+                    android:textColor="@color/grey_2"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:id="@+id/qtySubContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/qtyText"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/minusBtn"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_minus_icon" />
+
+                    <TextView
+                        android:id="@+id/qtyTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/minusBtn"
+                        android:fontFamily="@font/abeezee"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:text="1"
+                        android:textColor="@color/grey_2"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/plusBtn"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/qtyTextView"
+                        android:src="@drawable/ic_plus_icon" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
