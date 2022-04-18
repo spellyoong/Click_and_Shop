@@ -11,13 +11,13 @@
         android:layout_height="wrap_content">
 
         <CheckBox
+            android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/checkBox"
-            android:minHeight="0dp"
-            android:minWidth="0dp"
             android:buttonTint="@color/orange_1"
-            android:checked="true" />
+            android:checked="true"
+            android:minWidth="0dp"
+            android:minHeight="0dp" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
@@ -109,6 +109,7 @@
                         android:id="@+id/minusBtn"
                         android:layout_width="10dp"
                         android:layout_height="10dp"
+                        android:layout_margin="5dp"
                         android:layout_centerVertical="true"
                         android:src="@drawable/ic_minus_icon" />
 
@@ -129,6 +130,7 @@
                         android:id="@+id/plusBtn"
                         android:layout_width="10dp"
                         android:layout_height="10dp"
+                        android:layout_margin="5dp"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@id/qtyTextView"
                         android:src="@drawable/ic_plus_icon" />

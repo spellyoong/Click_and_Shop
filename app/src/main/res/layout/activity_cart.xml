@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +10,7 @@
         android:id="@+id/cartRelLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="15dp" >
+        android:paddingTop="15dp">
 
         <RelativeLayout
             android:id="@+id/cartSubContainer"
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
-                android:paddingBottom="125dp" >
+                android:paddingBottom="100dp">
 
                 <RelativeLayout
                     android:id="@+id/cartContent"
@@ -86,10 +86,10 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/subTotalPriceContainer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/cartContent"
-                    android:id="@+id/subTotalPriceContainer"
                     android:layout_marginLeft="22dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="22dp">
@@ -99,7 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
-                        android:text="Sub total (3 products)"
+                        android:text="Sub total (3 items)"
                         android:textSize="13sp"
                         android:textStyle="bold" />
 
@@ -157,10 +157,10 @@
                     android:background="@color/grey" />
 
                 <RelativeLayout
+                    android:id="@+id/totalPriceContainer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/cartLine1"
-                    android:id="@+id/totalPriceContainer"
                     android:layout_marginLeft="22dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="22dp">
@@ -192,6 +192,43 @@
         </androidx.core.widget.NestedScrollView>
 
         <RelativeLayout
+            android:id="@+id/emptyCartContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/cartLine0"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/emptyCartContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/emptyCartTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/alata"
+                    android:text="Your Cart Is Empty"
+                    android:textColor="@color/grey_2"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/shopNowBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/emptyCartTxt"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/alata"
+                    android:text="Continue Shopping"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:id="@+id/checkOutContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -200,6 +237,7 @@
             android:padding="10dp">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/checkOutBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -216,4 +254,4 @@
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

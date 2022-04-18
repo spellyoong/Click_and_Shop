@@ -78,4 +78,15 @@
     <string name="ques5">How can I contact Customer Service?</string>
     <string name="ans5">To contact product seller customer service, you can click on the chat button from product page or shop page.\n\nTo contact Click n\' Shop Customer Service, you can proceed to My Profile > Chat, and look for the Click n\' Shop Customer Service.</string>
 
+    <!-- CheckOut -->
+    <string name="checkoutTnc">By placing an order you agree to our\n<b><font fgcolor='#000000'>Terms</font></b> And <b><font fgcolor='#000000'>Conditions</font></b></string>
+
+    <!-- Review -->
+    <string name="review1">Received in well condition and nice quality, I love it!</string>
+    <string name="review2">Kain ok cotton. Longgar sikit bila pakai.. sesuai utk lelaki</string>
+    <string name="review3">2nd time buying this. My first bought mask is still in good shape. Seller is responsive, well done! Will definitely recommend this to my friend</string>
+    <string name="review4">Penghantaran cepat. Barang ok. Terima Kasih</string>
+    <string name="review5">Quality is good and color is nice too.</string>
+    <string name="review6">Fast delivery, value for money, good quality</string>
+
 </resources>

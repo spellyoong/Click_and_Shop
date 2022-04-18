@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -21,9 +22,7 @@ public class bottomNavActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_nav);
 
-        //this line hide statusbar
-        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        // Bottom navigation bar
         navigationView = findViewById(R.id.bottomNavigationView);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerActivity, new homeFragment()).commit();
         navigationView.setSelectedItemId(R.id.homeFragment);
@@ -71,5 +70,11 @@ public class bottomNavActivity extends AppCompatActivity {
                 break;
 
         }
+
+        // Developer login message
+        Boolean developerLogin = intent.getBooleanExtra("developerLogin", false);
+        if (developerLogin)
+            Toast.makeText(bottomNavActivity.this, "Developer Login", Toast.LENGTH_SHORT).show();
+
     }
 }

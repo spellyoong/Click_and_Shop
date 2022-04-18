@@ -26,6 +26,7 @@ public class ProductActivity extends AppCompatActivity {
     private View viewShopTxt;
     private View chatWithSeller;
     private View backArrow;
+    private View ratingContainer;
     private TextView productNameView;
     private ImageView productImageView;
     private TextView productPriceView;
@@ -33,7 +34,9 @@ public class ProductActivity extends AppCompatActivity {
     private TextView productDescView;
     private RatingBar productRateView;
     private View addCartButton;
+    private View buyButton;
     private Products currentProd;
+    Toast toast;
 
 
     @Override
@@ -103,6 +106,17 @@ public class ProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ProductActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Review navigation
+        ratingContainer = findViewById(R.id.ratingContainer);
+
+        ratingContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductActivity.this, ReviewActivity.class);
                 startActivity(intent);
             }
         });
@@ -232,8 +246,33 @@ public class ProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CartActivity.addCartItem(currentProd);
-                Toast.makeText(ProductActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
+                makeToast("Added to Cart");
+
             }
         });
+
+        // Buy now navigation
+        buyButton = findViewById(R.id.buyButton);
+
+        buyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CartActivity.addCartItem(currentProd);
+                Intent intent = new Intent(ProductActivity.this, CartActivity.class).putExtra("buyNow", true).putExtra("prodID", currentProd.productID);
+                startActivity(intent);
+
+            }
+        });
+
+
+    }
+
+    // Function to avoid toast delay
+    private void makeToast(String toastText){
+        if (toast != null)
+            toast.cancel();
+        toast = Toast.makeText(ProductActivity.this, toastText, Toast.LENGTH_SHORT);
+        toast.show();
+
     }
 }
