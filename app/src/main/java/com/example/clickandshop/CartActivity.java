@@ -3,22 +3,16 @@ package com.example.clickandshop;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ActionBar;
-import android.app.Application;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,42 +21,55 @@ import java.util.List;
 
 public class CartActivity extends AppCompatActivity implements RecyclerViewInterface3{
 
-    RecyclerView recyclerView;
-    CartRecyclerAdapter cartRecyclerAdapter;
-    NestedScrollView cartScrollView;
-    View checkOutContainer;
-    View emptyCartContainer;
+    // Initiate variables
+    private RecyclerView recyclerView;
+    private CartRecyclerAdapter cartRecyclerAdapter;
+    private NestedScrollView cartScrollView;
+    private View checkOutContainer;
+    private View emptyCartContainer;
+    private TextView cartItemCountTextView;
+    private TextView subTotal;
+    private TextView shippingFee;
+    private TextView totalPrice;
+    private static double totalPriceDouble = 0;
     private View backArrow;
-    View checkOutBtn;
-    Button shopNowBtn;
-    TextView cartItemCountTextView;
-    TextView subTotal;
-    TextView shippingFee;
-    TextView totalPrice;
-    static List<Cart> list = new ArrayList<>();
-    Dialog checkOutDialog;
-    View closePopUp;
-    View placeOrderBtn;
-    TextView checkOutPrice;
-    static double totalPriceDouble = 0;
+    private View checkOutBtn;
+    private Dialog checkOutDialog;
+    private View closePopUp;
+    private TextView checkOutPrice;
+    private View placeOrderBtn;
+    private int clickCount = 0;
+    private View addressArrow;
+    private View paymentArrow;
+    private View voucherArrow;
+    private Button shopNowBtn;
+    public static List<Cart> cartList = new ArrayList<>();
+    private Toast toast;
+    private Toast prototypeToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        // Hide cart contents if no item in cart
+        // Hide contents if cart is empty || Show cart contents if cart is not empty
         cartScrollView = findViewById(R.id.cartScrollView);
         checkOutContainer = findViewById(R.id.checkOutContainer);
         emptyCartContainer = findViewById(R.id.emptyCartContainer);
 
-        if (list.isEmpty()){
+        if (cartList.isEmpty()){
             cartScrollView.setVisibility(View.GONE);
             checkOutContainer.setVisibility(View.GONE);
             emptyCartContainer.setVisibility(View.VISIBLE);
         }
-        else
+        else {
             displayCartItems();
+            // Reset all prodCheck to true
+            for (int i=0; i<cartList.size(); i++){
+                cartList.get(i).setProdCheck(true);
+            }
+            displayTotalPrice();
+        }
 
         // Back key navigation
         backArrow = findViewById(R.id.backArrow);
@@ -74,7 +81,7 @@ public class CartActivity extends AppCompatActivity implements RecyclerViewInter
             }
         });
 
-        // Checkout popup navigation
+        // Checkout navigation (pop up dialog)
         checkOutBtn = findViewById(R.id.checkOutBtn);
         checkOutDialog = new Dialog(this, R.style.Theme_AppCompat_Translucent);
 
@@ -82,7 +89,7 @@ public class CartActivity extends AppCompatActivity implements RecyclerViewInter
             @Override
             public void onClick(View view) {
                 if (totalPriceDouble == 0){
-                    Toast.makeText(CartActivity.this, "Please select at least 1 item to proceed checkout", Toast.LENGTH_SHORT).show();
+                    makeToast("Please select at least 1 item to proceed checkout");
                 }
                 else {
                     checkOutDialog.setContentView(R.layout.popup_checkout);
@@ -95,33 +102,85 @@ public class CartActivity extends AppCompatActivity implements RecyclerViewInter
                         }
                     });
 
+                    checkOutPrice = checkOutDialog.findViewById(R.id.checkOutPrice);
+                    checkOutPrice.setText("RM " + String.format("%.2f", totalPriceDouble));
+                    checkOutDialog.show();
+
                     // Place order button action
                     placeOrderBtn = checkOutDialog.findViewById(R.id.placeOrderBtn);
                     placeOrderBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Toast.makeText(CartActivity.this, "Thank You!"+"\n"+"Order Successfully Placed", Toast.LENGTH_SHORT).show();
-                            list.clear();
+                            clickCount++; // To avoid user spam "Place Order" button
+                            if (clickCount <= 1) {
+                                makeToast("Thank You!" + "\n" + "Order Successfully Placed");
+                                cartList.clear();
 
-                            Handler handler = new Handler();
+                                Handler handler = new Handler();
 
-                            handler.postDelayed(new Runnable() {
-                                public void run() {
-                                    Intent intent = new Intent (CartActivity.this, bottomNavActivity.class).putExtra("frgToLoad", 1);
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    startActivity(intent);
-                                }
-                            }, 2000);
+                                handler.postDelayed(new Runnable() {
+                                    public void run() {
+                                        clickCount = 0;
+                                        Intent intent = new Intent(CartActivity.this, bottomNavActivity.class).putExtra("frgToLoad", 1);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(intent);
+                                    }
+                                }, 2000);
+                            }
                         }
                     });
-                    checkOutPrice = checkOutDialog.findViewById(R.id.checkOutPrice);
-                    checkOutPrice.setText("RM " + String.format("%.2f", totalPriceDouble));
-                    checkOutDialog.show();
+
+                    // Select address
+                    addressArrow = checkOutDialog.findViewById(R.id.addressArrow);
+                    addressArrow.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            displayPrototypeMessage();
+                        }
+                    });
+
+                    // Payment mode
+                    paymentArrow = checkOutDialog.findViewById(R.id.paymentArrow);
+                    paymentArrow.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            displayPrototypeMessage();
+                        }
+                    });
+
+                    // Voucher
+                    voucherArrow = checkOutDialog.findViewById(R.id.voucherArrow);
+                    voucherArrow.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            displayPrototypeMessage();
+                        }
+                    });
                 }
             }
         });
 
-        // Continue Shopping button navigation
+        // Direct purchase - navigate from Product Page "Buy Now" button
+        Intent intent = getIntent();
+
+        if (intent.getExtras() != null) {
+            if (intent.getBooleanExtra("buyNow", false)) {
+                int prodID = intent.getIntExtra("prodID", 0);
+                for (int i=0; i<cartList.size(); i++){
+                    if (cartList.get(i).productID != prodID) {
+                        cartList.get(i).setProdCheck(false);
+                        displayTotalPrice();
+                    }
+                    else {
+                        cartList.get(i).setProdQuantity(1);
+                        displayTotalPrice();
+                    }
+                }
+                checkOutBtn.performClick();
+            }
+        }
+
+        // Continue Shopping button navigation (when cart is empty)
         shopNowBtn = findViewById(R.id.shopNowBtn);
 
         shopNowBtn.setOnClickListener(new View.OnClickListener() {
@@ -132,99 +191,34 @@ public class CartActivity extends AppCompatActivity implements RecyclerViewInter
                 startActivity(intent);
             }
         });
-
-        // Reset all prodCheck to true when entering CartActivity
-        for (int i=0; i<list.size(); i++){
-            list.get(i).setProdCheck(true);
-        }
-        displayTotalPrice();
-        Intent intent = getIntent();
-
-        // Navigate from Product Page "Buy Now" button
-        if (intent.getExtras() != null) {
-            if (intent.getBooleanExtra("buyNow", false)) {
-                int prodID = intent.getIntExtra("prodID", 0);
-                for (int i=0; i<list.size(); i++){
-                    if (list.get(i).productID != prodID) {
-                        list.get(i).setProdCheck(false);
-
-                        displayTotalPrice();
-                    }
-                    else {
-                        list.get(i).setProdQuantity(1);
-                        displayTotalPrice();
-                    }
-                }
-                checkOutBtn.performClick();
-            }
-        }
     }
 
-    // Cart item checkbox
-    @Override
-    public void onCheckBoxClick(int position) {
-        displayTotalPrice();
+    // Set cart item(s) into recycler view
+    public void displayCartItems(){
+        // Initiate RecyclerView variables (Categories Products)
+        recyclerView = findViewById(R.id.recycler_view);
 
-    }
+        // RecyclerView layout (Categories Products)
+        LinearLayoutManager layoutManager = new LinearLayoutManager(
+                CartActivity.this,LinearLayoutManager.VERTICAL, false
+        );
 
-    // Deduct cart item quantity
-    @Override
-    public void onSubtractQtyClick(int position, boolean needRefresh) {
-        // Refresh cart item in recycler view when an item remove from list
-        if (needRefresh){
-            displayCartItems();
-        }
+        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        // Display "Your Cart Is Empty" message when no item in cart
-        if (list.isEmpty()){
-            cartScrollView.setVisibility(View.GONE);
-            checkOutContainer.setVisibility(View.GONE);
-            emptyCartContainer.setVisibility(View.VISIBLE);
-        }
-        else
-            displayTotalPrice();
-
-    }
-
-    // Add cart item quantity
-    @Override
-    public void onAddQtyClick(int position) {
-        displayTotalPrice();
-
-    }
-
-    // Add to cart from Product Activity
-    public static void addCartItem(Products currentProd){
-        Cart cartItem = new Cart();
-        boolean alreadyInCart = false;
-
-        for (int i=0; i<list.size(); i++){
-            if (currentProd.getProductID() == list.get(i).getProductID()){
-                alreadyInCart = true;
-                list.get(i).setProdQuantity(list.get(i).getProdQuantity()+1);
-                break;
-            }
-        }
-
-        if (alreadyInCart == false){
-            cartItem.setProductID(currentProd.getProductID());
-            cartItem.setProductPhoto(currentProd.getProductPhoto());
-            cartItem.setProductName(currentProd.getProductName());
-            cartItem.setProductPrice(currentProd.getProductPrice());
-            cartItem.setProdQuantity(1);
-            cartItem.setProdCheck(true);
-            list.add(cartItem);
-        }
-
+        // RecyclerView Adapter (Categories Products)
+        cartRecyclerAdapter = new CartRecyclerAdapter(CartActivity.this, cartList, this);
+        recyclerView.setAdapter(cartRecyclerAdapter);
     }
 
     // Set cart quantity, subtotal, shipping fee, total into respective view
     public void displayTotalPrice(){
         int cartItemCount = 0;
 
-        for (int i=0; i<list.size(); i++){
-            if (list.get(i).isProdCheck()) {
-                cartItemCount += list.get(i).getProdQuantity();
+        for (int i=0; i<cartList.size(); i++){
+            if (cartList.get(i).isProdCheck()) {
+                cartItemCount += cartList.get(i).getProdQuantity();
             }
         }
 
@@ -233,9 +227,9 @@ public class CartActivity extends AppCompatActivity implements RecyclerViewInter
 
         double subTotalDouble = 0;
 
-        for (int i=0; i<list.size(); i++){
-            if (list.get(i).isProdCheck()) {
-                subTotalDouble += list.get(i).getProductPrice() * list.get(i).getProdQuantity();
+        for (int i=0; i<cartList.size(); i++){
+            if (cartList.get(i).isProdCheck()) {
+                subTotalDouble += cartList.get(i).getProductPrice() * cartList.get(i).getProdQuantity();
             }
         }
 
@@ -259,22 +253,68 @@ public class CartActivity extends AppCompatActivity implements RecyclerViewInter
         totalPrice.setText("RM " + String.format("%.2f", totalPriceDouble));
     }
 
-    // Set cart item(s) into recycler view
-    public void displayCartItems(){
-        // Initiate RecyclerView variables (Categories Products)
-        recyclerView = findViewById(R.id.recycler_view);
+    // Checkbox action
+    @Override
+    public void onCheckBoxClick(int position) {
+        displayTotalPrice();
+    }
 
-        // RecyclerView layout (Categories Products)
-        LinearLayoutManager layoutManager = new LinearLayoutManager(
-                CartActivity.this,LinearLayoutManager.VERTICAL, false
-        );
+    // Deduct cart item quantity
+    @Override
+    public void onSubtractQtyClick(int position) {
+        // Display "Your Cart Is Empty" message when no item in cart
+        if (cartList.isEmpty()){
+            cartScrollView.setVisibility(View.GONE);
+            checkOutContainer.setVisibility(View.GONE);
+            emptyCartContainer.setVisibility(View.VISIBLE);
+        }
+        else
+            displayTotalPrice();
+    }
 
-        recyclerView.setNestedScrollingEnabled(false);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
+    // Add cart item quantity
+    @Override
+    public void onAddQtyClick(int position) {
+        displayTotalPrice();
+    }
 
-        // RecyclerView Adapter (Categories Products)
-        cartRecyclerAdapter = new CartRecyclerAdapter(CartActivity.this, list, this);
-        recyclerView.setAdapter(cartRecyclerAdapter);
+    // Add to cart - from Product Page "Add to Cart" button
+    public static void addCartItem(Products currentProd){
+        Cart cartItem = new Cart();
+        boolean alreadyInCart = false;
+
+        for (int i=0; i<cartList.size(); i++){
+            if (currentProd.getProductID() == cartList.get(i).getProductID()){
+                alreadyInCart = true;
+                cartList.get(i).setProdQuantity(cartList.get(i).getProdQuantity()+1);
+                break;
+            }
+        }
+
+        if (alreadyInCart == false){
+            cartItem.setProductID(currentProd.getProductID());
+            cartItem.setProductPhoto(currentProd.getProductPhoto());
+            cartItem.setProductName(currentProd.getProductName());
+            cartItem.setProductPrice(currentProd.getProductPrice());
+            cartItem.setProdQuantity(1);
+            cartItem.setProdCheck(true);
+            cartList.add(cartItem);
+        }
+    }
+
+    // Function to avoid toast delay
+    private void makeToast(String toastText){
+        if (toast != null)
+            toast.cancel();
+        toast = Toast.makeText(CartActivity.this, toastText, Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    // Prototype Message
+    private void displayPrototypeMessage(){
+        if (prototypeToast != null)
+            prototypeToast.cancel();
+        prototypeToast = Toast.makeText(CartActivity.this, "Function not implemented in current prototype version", Toast.LENGTH_SHORT);
+        prototypeToast.show();
     }
 }

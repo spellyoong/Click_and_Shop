@@ -12,10 +12,12 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
+    // Initiate variables
     private Button loginButton;
     private Button googleBtn;
     private Button fbBtn;
     private View developerLogin;
+    private int clickCount = 0;
     private EditText inputEmail;
     private EditText inputPassword;
     private TextView forgotPassword;
@@ -81,14 +83,18 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        // Developer login (Click shopping bag on hero banner)
+        // Developer login (Click shopping bag on hero banner x5)
         developerLogin = findViewById(R.id.developerLogin);
 
         developerLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this, bottomNavActivity.class).putExtra("developerLogin", true);
-                startActivity(intent);
+                clickCount++;
+                if (clickCount == 5) {
+                    clickCount = 0;
+                    Intent intent = new Intent(Login.this, bottomNavActivity.class).putExtra("developerLogin", true);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -114,7 +120,6 @@ public class Login extends AppCompatActivity {
             toast.cancel();
         toast = Toast.makeText(Login.this, toastText, Toast.LENGTH_SHORT);
         toast.show();
-
     }
 
     // Prototype Message
@@ -123,6 +128,5 @@ public class Login extends AppCompatActivity {
             prototypeToast.cancel();
         prototypeToast = Toast.makeText(Login.this, "Function not implemented in current prototype version", Toast.LENGTH_SHORT);
         prototypeToast.show();
-
     }
 }

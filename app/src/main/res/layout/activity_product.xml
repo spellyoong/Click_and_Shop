@@ -18,6 +18,7 @@
         android:paddingBottom="15dp">
 
         <ImageView
+            android:id="@+id/backArrow"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"
@@ -25,8 +26,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_back_arrow_1"
-            android:id="@+id/backArrow" />
+            android:src="@drawable/ic_back_arrow_1" />
 
         <ImageView
             android:id="@+id/cartIcon"
@@ -35,6 +35,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_toLeftOf="@id/chatIcon"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="5dp"
             android:src="@drawable/ic_shopping_cart_icon" />
 
@@ -44,17 +45,18 @@
             android:layout_height="36dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="5dp"
             android:src="@drawable/ic_chat_icon" />
 
     </RelativeLayout>
 
     <ScrollView
+        android:id="@+id/productScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/productScrollView"
-        android:layout_below="@id/mainHeaderRelLayout"
-        android:layout_above="@id/productFooter">
+        android:layout_above="@id/productFooter"
+        android:layout_below="@id/mainHeaderRelLayout">
 
         <RelativeLayout
             android:id="@+id/scrollContainer"
@@ -148,8 +150,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="Review"
                         android:fontFamily="@font/alata"
+                        android:text="Review"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -212,8 +214,8 @@
                         android:id="@+id/shopName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="OUM Official Shop"
                         android:fontFamily="@font/alata"
+                        android:text="OUM Official Shop"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -245,6 +247,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="16dp"
+                        android:background="?android:attr/selectableItemBackground"
                         android:fontFamily="@font/alata"
                         android:text="View Shop"
                         android:textColor="@color/orange_1"
@@ -340,10 +343,11 @@
         android:padding="10dp">
 
         <RelativeLayout
+            android:id="@+id/chatWithSeller"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:id="@+id/chatWithSeller">
+            android:background="?android:attr/selectableItemBackground">
 
             <ImageView
                 android:id="@+id/chatIcon2"
@@ -359,8 +363,8 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="3dp"
                 android:layout_toRightOf="@id/chatIcon2"
-                android:text="Chat with Seller"
                 android:fontFamily="@font/alata"
+                android:text="Chat with Seller"
                 android:textColor="@color/orange_1"
                 android:textSize="14sp" />
 
@@ -373,8 +377,8 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:background="@drawable/buy_button_bg"
-            android:text="Buy Now"
             android:fontFamily="@font/alata"
+            android:text="Buy Now"
             android:textAllCaps="false"
             android:textSize="14sp" />
 

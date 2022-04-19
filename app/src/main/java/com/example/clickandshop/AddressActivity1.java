@@ -8,14 +8,25 @@ import android.view.View;
 
 public class AddressActivity1 extends AppCompatActivity {
 
+    // Initiate variables
+    private View backArrow;
     private View AddressContainer1;
     private View AddressContainer2;
-    private View backArrow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address1);
+
+        // Back key navigation
+        backArrow = findViewById(R.id.backArrow);
+
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         // Update address navigation
         AddressContainer1 = findViewById(R.id.AddressContainer1);
@@ -37,14 +48,5 @@ public class AddressActivity1 extends AppCompatActivity {
             }
         });
 
-        // Back key navigation
-        backArrow = findViewById(R.id.backArrow);
-
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
     }
 }

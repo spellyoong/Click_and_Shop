@@ -1,179 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="15dp"
     tools:context=".ChatActivity2">
 
     <RelativeLayout
-        android:id="@+id/chat2RelLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="22dp">
-
-
-        <RelativeLayout
-            android:id="@+id/chat2SubContainer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/backArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_back_arrow_1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/alata"
-                android:text="OUM Official Shop"
-                android:textSize="23dp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/conversation1RelLayout"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/chat2SubContainer"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="20dp">
-
-            <TextView
-                android:id="@+id/timeStamp1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/abeezee"
-                android:textColor="@color/grey_3"
-                android:text="06-03-2022 08:34"
-                android:textSize="13sp" />
-
-            <RelativeLayout
-                android:id="@+id/converContainer1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/timeStamp1"
-                android:background="@drawable/chat_box_bg"
-                android:padding="15dp">
-
-                <TextView
-                    android:id="@+id/chatName1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/chatName1"
-                    android:textColor="@color/chat_name1" />
-
-                <TextView
-                    android:id="@+id/conversation1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/chatName1"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginTop="17dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="@string/conversationTxt1"
-                    android:textColor="@color/black" />
-
-            </RelativeLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/conversation2RelLayout"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/conversation1RelLayout"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="20dp">
-
-            <TextView
-                android:id="@+id/timeStamp2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/abeezee"
-                android:textColor="@color/grey_3"
-                android:text="06-03-2022 09:00"
-                android:textSize="13sp" />
-
-            <RelativeLayout
-                android:id="@+id/converContainer2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/timeStamp2"
-                android:background="@drawable/chat_box_bg"
-                android:padding="15dp">
-
-                <TextView
-                    android:id="@+id/chatName2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/chatName2"
-                    android:textColor="@color/chat_name2" />
-
-                <TextView
-                    android:id="@+id/conversation2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/chatName2"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginTop="17dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="@string/conversationTxt2"
-                    android:textColor="@color/black" />
-
-            </RelativeLayout>
-        </RelativeLayout>
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:layout_alignParentBottom="true">
+        android:id="@+id/chat2Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp">
 
         <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:src="@drawable/ic_attachment_icon"
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow_1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/alata"
+            android:text="OUM Official Shop"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/chat2ScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/messageBox"
+        android:layout_below="@id/chat2Header">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="22dp"
+            android:paddingTop="10dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="25dp">
+
+            <RelativeLayout
+                android:id="@+id/conversation1RelLayout"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    android:id="@+id/timeStamp1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="06-03-2022 08:34"
+                    android:textColor="@color/grey_3"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:id="@+id/converContainer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/timeStamp1"
+                    android:background="@drawable/chat_box_bg"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/chatName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:fontFamily="@font/abeezee"
+                        android:text="@string/chatName1"
+                        android:textColor="@color/chat_name1" />
+
+                    <TextView
+                        android:id="@+id/conversation1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/chatName1"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="17dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/conversationTxt1"
+                        android:textColor="@color/black" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/conversation2RelLayout"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/conversation1RelLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/timeStamp2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="06-03-2022 09:00"
+                    android:textColor="@color/grey_3"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:id="@+id/converContainer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/timeStamp2"
+                    android:background="@drawable/chat_box_bg"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/chatName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:fontFamily="@font/abeezee"
+                        android:text="@string/chatName2"
+                        android:textColor="@color/chat_name2" />
+
+                    <TextView
+                        android:id="@+id/conversation2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/chatName2"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="17dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/conversationTxt2"
+                        android:textColor="@color/black" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/messageBox"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/attachIcon"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="25dp"
-            android:id="@+id/attachIcon" />
+            android:padding="5dp"
+            android:src="@drawable/ic_attachment_icon" />
 
         <EditText
             android:id="@+id/msg_Box"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="11dp"
-            android:layout_marginRight="9dp"
+            android:layout_marginLeft="5dp"
             android:layout_toLeftOf="@id/sendIcon"
             android:layout_toRightOf="@id/attachIcon"
-            android:hint="Message" />
+            android:hint="Message"
+            android:inputType="text" />
 
         <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:src="@drawable/ic_send_icon"
-            android:layout_centerVertical="true"
+            android:id="@+id/sendIcon"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="25dp"
-            android:id="@+id/sendIcon" />
+            android:padding="5dp"
+            android:src="@drawable/ic_send_icon" />
 
     </RelativeLayout>
 

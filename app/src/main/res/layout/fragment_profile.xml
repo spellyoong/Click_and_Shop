@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profileFragment"
+    android:background="@color/white"
     android:clickable="true"
-    android:background="@color/white">
+    android:paddingTop="15dp"
+    tools:context=".profileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/profileRelLayout"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginRight="22dp" >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <RelativeLayout
+            android:id="@+id/profileContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:id="@+id/profileContainer">
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp">
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/profilePic"
@@ -32,11 +31,12 @@
                 android:src="@drawable/profile_pic" />
 
             <RelativeLayout
+                android:id="@+id/profileInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/profilePic"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp">
+                android:layout_marginLeft="25dp"
+                android:layout_toRightOf="@id/profilePic">
 
                 <TextView
                     android:id="@+id/profileName"
@@ -65,21 +65,25 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@id/profileContainer"
+            android:layout_marginLeft="22dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="22dp"
             android:background="@color/grey" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/profileLine0"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp">
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/profileOrderContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingLeft="30dp"
                 android:paddingTop="18dp"
+                android:paddingRight="30dp"
                 android:paddingBottom="18dp">
 
                 <ImageView
@@ -107,15 +111,18 @@
                 android:id="@+id/profileLine1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/profileOrderContainer"
-                android:background="@color/grey" />
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/grey"/>
 
             <RelativeLayout
                 android:id="@+id/profileDetailContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/profileLine1"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingLeft="30dp"
                 android:paddingTop="18dp"
+                android:paddingRight="30dp"
                 android:paddingBottom="18dp">
 
                 <ImageView
@@ -143,15 +150,18 @@
                 android:id="@+id/profileLine2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/profileDetailContainer"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:background="@color/grey" />
 
             <RelativeLayout
                 android:id="@+id/profileLocationContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/profileLine2"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingLeft="30dp"
                 android:paddingTop="18dp"
+                android:paddingRight="30dp"
                 android:paddingBottom="18dp">
 
                 <ImageView
@@ -179,15 +189,18 @@
                 android:id="@+id/profileLine3"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/profileLocationContainer"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:background="@color/grey" />
 
             <RelativeLayout
                 android:id="@+id/profileVoucherContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/profileLine3"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingLeft="30dp"
                 android:paddingTop="18dp"
+                android:paddingRight="30dp"
                 android:paddingBottom="18dp">
 
                 <ImageView
@@ -215,15 +228,18 @@
                 android:id="@+id/profileLine4"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/profileVoucherContainer"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:background="@color/grey" />
 
             <RelativeLayout
                 android:id="@+id/profileChatContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/profileLine4"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingLeft="30dp"
                 android:paddingTop="18dp"
+                android:paddingRight="30dp"
                 android:paddingBottom="18dp">
 
                 <ImageView
@@ -251,15 +267,18 @@
                 android:id="@+id/profileLine5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/profileChatContainer"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:background="@color/grey" />
 
             <RelativeLayout
                 android:id="@+id/profileHelpContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/profileLine5"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingLeft="30dp"
                 android:paddingTop="18dp"
+                android:paddingRight="30dp"
                 android:paddingBottom="18dp">
 
                 <ImageView
@@ -287,15 +306,18 @@
                 android:id="@+id/profileLine6"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/profileHelpContainer"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:background="@color/grey" />
 
             <RelativeLayout
                 android:id="@+id/profileAboutContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/profileLine6"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingLeft="30dp"
                 android:paddingTop="18dp"
+                android:paddingRight="30dp"
                 android:paddingBottom="18dp">
 
                 <ImageView
@@ -323,12 +345,19 @@
                 android:id="@+id/profileLine7"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/profileAboutContainer"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginBottom="18dp"
                 android:background="@color/grey" />
 
-        </RelativeLayout>
+            <View
+                android:id="@+id/blank_space"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@color/white" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

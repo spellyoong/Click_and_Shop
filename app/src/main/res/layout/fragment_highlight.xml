@@ -32,12 +32,15 @@
                 android:src="@drawable/ic_search_icon" />
 
             <EditText
+                android:id="@+id/searchEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/searchIcon"
                 android:background="@null"
                 android:hint="Search what you need"
+                android:inputType="text"
+                android:singleLine="true"
                 android:textColorHint="@color/orange_1"
                 android:textSize="14sp" />
 
@@ -50,6 +53,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_toLeftOf="@id/chatIcon"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="5dp"
             android:src="@drawable/ic_shopping_cart_icon" />
 
@@ -59,16 +63,17 @@
             android:layout_height="36dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="5dp"
             android:src="@drawable/ic_chat_icon" />
 
     </RelativeLayout>
 
     <ScrollView
+        android:id="@+id/highlightScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/highlightScrollView"
-        android:layout_below="@id/mainHeaderRelLayout" >
+        android:layout_below="@id/mainHeaderRelLayout">
 
         <RelativeLayout
             android:id="@+id/scrollContainer"
@@ -85,10 +90,10 @@
                     android:id="@+id/bannerTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
                     android:paddingLeft="15dp"
                     android:paddingTop="10dp"
                     android:text="Discover Latest Deals"
-                    android:fontFamily="@font/alata"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -114,10 +119,10 @@
                     android:id="@+id/featuredStoresTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
                     android:paddingLeft="15dp"
                     android:paddingTop="10dp"
                     android:text="Featured Stores"
-                    android:fontFamily="@font/alata"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -159,8 +164,8 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/shop1Name"
                             android:layout_marginTop="10dp"
-                            android:text="Active 1 hour ago"
                             android:fontFamily="@font/abeezee"
+                            android:text="Active 1 hour ago"
                             android:textColor="@color/grey_2"
                             android:textSize="12sp" />
 
@@ -169,8 +174,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/active1Txt"
-                            android:text="Petaling Jaya"
                             android:fontFamily="@font/abeezee"
+                            android:text="Petaling Jaya"
                             android:textColor="@color/grey_2"
                             android:textSize="12sp" />
 
@@ -181,6 +186,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="16dp"
+                            android:background="?android:attr/selectableItemBackground"
                             android:fontFamily="@font/alata"
                             android:text="View Shop"
                             android:textColor="@color/orange_1"
@@ -239,8 +245,8 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/shop2Name"
                             android:layout_marginTop="10dp"
-                            android:text="Active 15 minutes ago"
                             android:fontFamily="@font/abeezee"
+                            android:text="Active 15 minutes ago"
                             android:textColor="@color/grey_2"
                             android:textSize="12sp" />
 
@@ -249,8 +255,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/active2Txt"
-                            android:text="Pahang"
                             android:fontFamily="@font/abeezee"
+                            android:text="Pahang"
                             android:textColor="@color/grey_2"
                             android:textSize="12sp" />
 
@@ -261,6 +267,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="16dp"
+                            android:background="?android:attr/selectableItemBackground"
                             android:fontFamily="@font/alata"
                             android:text="View Shop"
                             android:textColor="@color/orange_1"
@@ -315,8 +322,8 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/shop3Name"
                             android:layout_marginTop="10dp"
-                            android:text="Active 2 hours ago"
                             android:fontFamily="@font/abeezee"
+                            android:text="Active 2 hours ago"
                             android:textColor="@color/grey_2"
                             android:textSize="12sp" />
 
@@ -325,8 +332,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/active3Txt"
-                            android:text="Ipoh"
                             android:fontFamily="@font/abeezee"
+                            android:text="Ipoh"
                             android:textColor="@color/grey_2"
                             android:textSize="12sp" />
 
@@ -337,6 +344,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:layout_marginRight="16dp"
+                            android:background="?android:attr/selectableItemBackground"
                             android:fontFamily="@font/alata"
                             android:text="View Shop"
                             android:textColor="@color/orange_1"

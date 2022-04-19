@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".SellerActivity"
-    android:background="@color/grey">
+    android:background="@color/grey"
+    tools:context=".SellerActivity">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/sellerScrollView"
@@ -25,12 +24,12 @@
                 android:src="@drawable/seller_banner" />
 
             <RelativeLayout
+                android:id="@+id/sellerInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:id="@+id/sellerInfo">
+                android:layout_marginTop="80dp"
+                android:layout_marginRight="20dp">
 
                 <ImageView
                     android:id="@+id/sellerProfilePic"
@@ -62,8 +61,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/shopName"
                         android:layout_marginTop="10dp"
-                        android:text="Active 1 hour ago"
                         android:fontFamily="@font/abeezee"
+                        android:text="Active 1 hour ago"
                         android:textColor="@color/white"
                         android:textSize="12sp" />
 
@@ -72,8 +71,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/activeTxt"
-                        android:text="Petaling Jaya"
                         android:fontFamily="@font/abeezee"
+                        android:text="Petaling Jaya"
                         android:textColor="@color/white"
                         android:textSize="12sp" />
 
@@ -95,10 +94,10 @@
             </RelativeLayout>
 
             <LinearLayout
+                android:id="@+id/sellerRating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sellerInfo"
-                android:id="@+id/sellerRating"
                 android:layout_marginTop="20dp">
 
                 <LinearLayout
@@ -111,17 +110,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
                         android:text="Overall Rating"
-                        android:fontFamily="@font/alata"
-                        android:textSize="14sp"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="4.9 / 5.0"
                         android:fontFamily="@font/abeezee"
-                        android:textSize="14sp"
-                        android:textColor="@color/white" />
+                        android:text="4.9 / 5.0"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -129,24 +129,25 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
                     android:background="@drawable/seller_rate_bg"
+                    android:gravity="center"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Delivery"
                         android:fontFamily="@font/alata"
-                        android:textSize="14sp"
-                        android:textColor="@color/white" />
+                        android:text="Delivery"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="4.9 / 5.0"
                         android:fontFamily="@font/abeezee"
-                        android:textSize="14sp"
-                        android:textColor="@color/white" />
+                        android:text="4.9 / 5.0"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -160,17 +161,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Seller Service"
                         android:fontFamily="@font/alata"
-                        android:textSize="14sp"
-                        android:textColor="@color/white" />
+                        android:text="Seller Service"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="4.9 / 5.0"
                         android:fontFamily="@font/abeezee"
-                        android:textSize="14sp"
-                        android:textColor="@color/white" />
+                        android:text="4.9 / 5.0"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -184,6 +186,7 @@
                 android:background="@drawable/seller_category_line">
 
                 <TextView
+                    android:id="@+id/shopNav"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/seller_category_bg"
@@ -195,6 +198,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/productNav"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alata"
@@ -205,6 +209,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/categoriesNav"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alata"
@@ -222,8 +227,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sellerCategory"
-                android:paddingTop="6dp"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:paddingTop="6dp">
 
                 <TextView
                     android:id="@+id/topProductHeader"
@@ -251,21 +256,21 @@
             </RelativeLayout>
 
             <ImageView
+                android:id="@+id/campaignBanner"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginTop="6dp"
-                android:src="@drawable/campaign_banner"
                 android:layout_below="@id/topProductContainer"
+                android:layout_marginTop="6dp"
                 android:scaleType="centerCrop"
-                android:id="@+id/campaignBanner" />
+                android:src="@drawable/campaign_banner" />
 
             <RelativeLayout
                 android:id="@+id/recommendContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/campaignBanner"
-                android:paddingTop="6dp"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:paddingTop="6dp">
 
                 <TextView
                     android:id="@+id/recommendHeader"
@@ -313,10 +318,10 @@
             android:id="@+id/sellerSubContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
             android:paddingLeft="22dp"
-            android:paddingRight="22dp">
+            android:paddingTop="15dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="15dp">
 
             <ImageView
                 android:id="@+id/backArrow"
@@ -342,12 +347,15 @@
                     android:src="@drawable/ic_search_icon" />
 
                 <EditText
+                    android:id="@+id/searchEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/searchIcon"
                     android:background="@null"
                     android:hint="Search in shop"
+                    android:inputType="text"
+                    android:singleLine="true"
                     android:textColorHint="@color/orange_1"
                     android:textSize="14sp" />
 
@@ -360,11 +368,12 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
+                android:background="?android:attr/selectableItemBackground"
                 android:padding="5dp"
                 android:src="@drawable/ic_shopping_cart_icon" />
 
         </RelativeLayout>
 
     </RelativeLayout>
-    
+
 </RelativeLayout>

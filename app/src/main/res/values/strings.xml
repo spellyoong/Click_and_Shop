@@ -89,4 +89,9 @@
     <string name="review5">Quality is good and color is nice too.</string>
     <string name="review6">Fast delivery, value for money, good quality</string>
 
+    <!-- My Details -->
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>

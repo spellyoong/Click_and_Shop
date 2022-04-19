@@ -19,31 +19,31 @@ import java.util.List;
 
 public class ProductActivity extends AppCompatActivity {
 
-    // Initiate views (activity_product)
+    // Initiate variables
     private GridView gridView;
-    private View chatIcon;
-    private View cartIcon;
-    private View viewShopTxt;
-    private View chatWithSeller;
-    private View backArrow;
-    private View ratingContainer;
     private TextView productNameView;
     private ImageView productImageView;
     private TextView productPriceView;
     private TextView soldQtyView;
     private TextView productDescView;
     private RatingBar productRateView;
+    private View backArrow;
+    private View cartIcon;
+    private View chatIcon;
+    private View ratingContainer;
+    private View viewShopTxt;
+    private View chatWithSeller;
     private View addCartButton;
     private View buyButton;
     private Products currentProd;
-    Toast toast;
-
+    private Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
 
+        // =========== GridView Start ===========
         // Retrieve products list from Products.java
         List<Products> list = new ArrayList<Products>();
         list = new Products().getProdList();
@@ -87,71 +87,7 @@ public class ProductActivity extends AppCompatActivity {
                 startActivity(new Intent(ProductActivity.this, ProductActivity.class).putExtra("position", i));
             }
         });
-
-        // Chat navigation
-        chatIcon = findViewById(R.id.chatIcon);
-
-        chatIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProductActivity.this, ChatActivity2.class);
-                startActivity(intent);
-            }
-        });
-
-        // Cart navigation
-        cartIcon = findViewById(R.id.cartIcon);
-
-        cartIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProductActivity.this, CartActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // Review navigation
-        ratingContainer = findViewById(R.id.ratingContainer);
-
-        ratingContainer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProductActivity.this, ReviewActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // Seller page navigation
-        viewShopTxt = findViewById(R.id.viewShopTxt);
-
-        viewShopTxt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProductActivity.this, SellerActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // Chat with seller navigation
-        chatWithSeller = findViewById(R.id.chatWithSeller);
-
-        chatWithSeller.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProductActivity.this, ChatActivity2.class);
-                startActivity(intent);
-            }
-        });
-
-        // Back key navigation
-        backArrow = findViewById(R.id.backArrow);
-
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        // =========== GridView End ===========
 
         // Capture views (activity_product)
         productNameView = findViewById(R.id.productNameView);
@@ -239,6 +175,71 @@ public class ProductActivity extends AppCompatActivity {
 
         }
 
+        // Back key navigation
+        backArrow = findViewById(R.id.backArrow);
+
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        // Cart navigation
+        cartIcon = findViewById(R.id.cartIcon);
+
+        cartIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Chat navigation
+        chatIcon = findViewById(R.id.chatIcon);
+
+        chatIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductActivity.this, ChatActivity2.class);
+                startActivity(intent);
+            }
+        });
+
+        // Review navigation
+        ratingContainer = findViewById(R.id.ratingContainer);
+
+        ratingContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductActivity.this, ReviewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Seller page navigation
+        viewShopTxt = findViewById(R.id.viewShopTxt);
+
+        viewShopTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductActivity.this, SellerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Chat with seller navigation
+        chatWithSeller = findViewById(R.id.chatWithSeller);
+
+        chatWithSeller.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductActivity.this, ChatActivity2.class);
+                startActivity(intent);
+            }
+        });
+
         // Add to cart
         addCartButton = findViewById(R.id.addCartButton);
 
@@ -263,8 +264,6 @@ public class ProductActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     // Function to avoid toast delay
@@ -273,6 +272,5 @@ public class ProductActivity extends AppCompatActivity {
             toast.cancel();
         toast = Toast.makeText(ProductActivity.this, toastText, Toast.LENGTH_SHORT);
         toast.show();
-
     }
 }

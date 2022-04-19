@@ -15,13 +15,13 @@ import java.util.List;
 
 public class CategoriesActivity extends AppCompatActivity implements RecyclerViewInterface, RecyclerViewInterface2{
 
-    // Initiate variables for recycler view
-    RecyclerView recyclerView;
-    RecyclerView recyclerView2;
-    CategoryRecyclerAdapter categoryRecyclerAdapter;
-    ProductRecyclerAdapter productRecyclerAdapter;
-    int categoryOption;
-    int categoryPosition;
+    // Initiate variables
+    private RecyclerView recyclerView;
+    private RecyclerView recyclerView2;
+    private CategoryRecyclerAdapter categoryRecyclerAdapter;
+    private ProductRecyclerAdapter productRecyclerAdapter;
+    private int categoryOption;
+    private int categoryPosition;
     private View backArrow;
 
     @Override
@@ -92,6 +92,7 @@ public class CategoriesActivity extends AppCompatActivity implements RecyclerVie
         });
     }
 
+    // NavBar navigation
     @Override
     public void onItemCategoryClick(int position) {
 
@@ -135,6 +136,7 @@ public class CategoriesActivity extends AppCompatActivity implements RecyclerVie
 
     }
 
+    // Product page navigation
     public void onItemClick(int position) {
         Intent intent = new Intent(CategoriesActivity.this, ProductActivity.class).putExtra("position", position).putExtra("categoryPosition", categoryPosition);
         startActivity(intent);

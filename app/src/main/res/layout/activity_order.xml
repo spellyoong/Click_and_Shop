@@ -1,271 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="15dp"
     tools:context=".OrderActivity">
-    
-    <RelativeLayout
-        android:id="@+id/orderRelLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="15dp" >
 
-        <RelativeLayout
-            android:id="@+id/orderSubContainer"
+    <RelativeLayout
+        android:id="@+id/orderHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow_1" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="22dp"
-            android:paddingRight="22dp">
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/alata"
+            android:text="My Order"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/backArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_back_arrow_1" />
+    </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/alata"
-                android:text="My Order"
-                android:textSize="23sp"
-                android:textStyle="bold" />
+    <View
+        android:id="@+id/orderLine0"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/orderHeader"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="22dp"
+        android:background="@color/grey" />
 
-        </RelativeLayout>
+    <ScrollView
+        android:id="@+id/orderScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderLine0">
 
-        <View
-            android:id="@+id/orderLine0"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/orderSubContainer"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="22dp"
-            android:background="@color/grey" />
-
-        <ScrollView
-            android:id="@+id/orderScrollView"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/orderContainer"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/orderLine0" >
+            android:orientation="vertical"
+            android:paddingLeft="22dp"
+            android:paddingTop="15dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="25dp">
 
             <RelativeLayout
-                android:id="@+id/orderContainer"
+                android:id="@+id/OrderContainer1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingLeft="22dp"
-                android:paddingRight="22dp"
-                android:paddingBottom="25dp" >
+                android:layout_height="wrap_content">
 
-                <RelativeLayout
-                    android:id="@+id/OrderContainer1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/orderDate1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/orderDate1"
-                        android:fontFamily="@font/abeezee"
-                        android:textColor="@color/grey_2"
-                        android:textSize="13sp" />
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/orderSubContainer1"
-                        android:layout_below="@id/orderDate1">
-
-                        <TextView
-                            android:id="@+id/orderNumberTxt1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="Order Number:"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/orderAmountTxt1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/orderNumberTxt1"
-                            android:fontFamily="@font/alata"
-                            android:text="Amount:"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/orderNumber1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:fontFamily="@font/alata"
-                            android:text="@string/orderNumber1"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/orderAmount1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_below="@id/orderNumber1"
-                            android:fontFamily="@font/alata"
-                            android:text="@string/orderAmount1"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/orderTrackContainer1"
-                        android:layout_below="@+id/orderSubContainer1"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:id="@+id/orderTxt1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:fontFamily="@font/abeezee"
-                            android:text="@string/orderTrack1"
-                            android:textColor="@color/grey_2"
-                            android:textSize="13sp"
-                            android:lines="2" />
-
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_back_arrow" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-                <View
-                    android:id="@+id/orderLine1"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@id/OrderContainer1"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/grey" />
-
-                <RelativeLayout
-                    android:id="@+id/OrderContainer2"
+                <TextView
+                    android:id="@+id/orderDate1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/orderLine1"
-                    android:layout_marginTop="15dp">
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/orderDate1"
+                    android:textColor="@color/grey_2"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:id="@+id/orderSubContainer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderDate1">
 
                     <TextView
-                        android:id="@+id/orderDate2"
+                        android:id="@+id/orderNumberTxt1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/orderDate2"
-                        android:fontFamily="@font/abeezee"
-                        android:textColor="@color/grey_2"
-                        android:textSize="13sp" />
+                        android:fontFamily="@font/alata"
+                        android:text="Order Number:"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-                    <RelativeLayout
+                    <TextView
+                        android:id="@+id/orderAmountTxt1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/orderSubContainer2"
-                        android:layout_below="@id/orderDate2">
+                        android:layout_below="@id/orderNumberTxt1"
+                        android:fontFamily="@font/alata"
+                        android:text="Amount:"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/orderNumberTxt2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/alata"
-                            android:text="Order Number:"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/orderAmountTxt2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/orderNumberTxt2"
-                            android:fontFamily="@font/alata"
-                            android:text="Amount:"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/orderNumber2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:fontFamily="@font/alata"
-                            android:text="@string/orderNumber2"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/orderAmount2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_below="@id/orderNumber2"
-                            android:fontFamily="@font/alata"
-                            android:text="@string/orderAmount2"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
+                    <TextView
+                        android:id="@+id/orderNumber1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/orderTrackContainer2"
-                        android:layout_below="@+id/orderSubContainer2"
-                        android:layout_marginTop="10dp">
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/orderNumber1"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/orderTxt2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:fontFamily="@font/abeezee"
-                            android:text="@string/orderTrack2"
-                            android:textColor="@color/grey_2"
-                            android:textSize="13sp"
-                            android:lines="2" />
-
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_back_arrow" />
-
-                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/orderAmount1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/orderNumber1"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/orderAmount1"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
-                <View
-                    android:id="@+id/orderLine2"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@id/OrderContainer2"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/grey" />
+                <RelativeLayout
+                    android:id="@+id/orderTrackContainer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/orderSubContainer1"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/orderTxt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/abeezee"
+                        android:lines="2"
+                        android:text="@string/orderTrack1"
+                        android:textColor="@color/grey_2"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/orderArrow1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:src="@drawable/ic_back_arrow" />
+
+                </RelativeLayout>
 
             </RelativeLayout>
 
-        </ScrollView>
+            <View
+                android:id="@+id/orderLine1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/grey" />
 
-    </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RelativeLayout
+                android:id="@+id/OrderContainer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/orderDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/orderDate2"
+                    android:textColor="@color/grey_2"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:id="@+id/orderSubContainer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderDate2">
+
+                    <TextView
+                        android:id="@+id/orderNumberTxt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="Order Number:"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/orderAmountTxt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/orderNumberTxt2"
+                        android:fontFamily="@font/alata"
+                        android:text="Amount:"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/orderNumber2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/orderNumber2"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/orderAmount2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/orderNumber2"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/orderAmount2"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/orderTrackContainer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/orderSubContainer2"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/orderTxt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/abeezee"
+                        android:lines="2"
+                        android:text="@string/orderTrack2"
+                        android:textColor="@color/grey_2"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/orderArrow2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:src="@drawable/ic_back_arrow" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/orderLine2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/grey" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

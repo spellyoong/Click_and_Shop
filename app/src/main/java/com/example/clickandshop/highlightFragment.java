@@ -5,12 +5,15 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +24,9 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class highlightFragment extends Fragment {
+
+    // Initiate variables
+    private Toast prototypeToast;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,6 +75,73 @@ public class highlightFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_highlight, container, false);
 
+        // Search
+        EditText searchEditText = v.findViewById(R.id.searchEditText);
+
+        searchEditText.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    displayPrototypeMessage();
+                    searchEditText.setText("");
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        // Cart page navigation
+        ImageView cartIcon = v.findViewById(R.id.cartIcon);
+
+        cartIcon.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Chat page navigation
+        ImageView chatIcon = v.findViewById(R.id.chatIcon);
+
+        chatIcon.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ChatActivity1.class);
+                startActivity(intent);
+            }
+        });
+
+        // Seller page navigation
+        TextView viewShop1Txt = v.findViewById(R.id.viewShop1Txt);
+        TextView viewShop2Txt = v.findViewById(R.id.viewShop2Txt);
+        TextView viewShop3Txt = v.findViewById(R.id.viewShop3Txt);
+
+        viewShop1Txt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SellerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        viewShop2Txt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SellerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        viewShop3Txt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SellerActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // Retrieve products list from Products.java
         List<Products> list = new ArrayList<Products>();
         list = new Products().getProdList();
@@ -113,47 +186,15 @@ public class highlightFragment extends Fragment {
             }
         });
 
-        // Chat page navigation
-        ImageView chatIcon = v.findViewById(R.id.chatIcon);
-
-        chatIcon.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ChatActivity1.class);
-                startActivity(intent);
-            }
-        });
-
-        // Seller page navigation
-        TextView viewShop1Txt = v.findViewById(R.id.viewShop1Txt);
-        TextView viewShop2Txt = v.findViewById(R.id.viewShop2Txt);
-        TextView viewShop3Txt = v.findViewById(R.id.viewShop3Txt);
-
-        viewShop1Txt.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), SellerActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        viewShop2Txt.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), SellerActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        viewShop3Txt.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), SellerActivity.class);
-                startActivity(intent);
-            }
-        });
-
         return v;
 
+    }
+
+    // Prototype Message
+    private void displayPrototypeMessage(){
+        if (prototypeToast != null)
+            prototypeToast.cancel();
+        prototypeToast = Toast.makeText(getActivity(), "Function not implemented in current prototype version", Toast.LENGTH_SHORT);
+        prototypeToast.show();
     }
 }

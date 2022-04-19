@@ -107,10 +107,11 @@
 
                     <ImageView
                         android:id="@+id/minusBtn"
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:layout_margin="5dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_centerVertical="true"
+                        android:padding="5dp"
                         android:src="@drawable/ic_minus_icon" />
 
                     <TextView
@@ -128,11 +129,12 @@
 
                     <ImageView
                         android:id="@+id/plusBtn"
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:layout_margin="5dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_centerVertical="true"
+                        android:padding="5dp"
                         android:layout_toRightOf="@id/qtyTextView"
+                        android:background="?android:attr/selectableItemBackground"
                         android:src="@drawable/ic_plus_icon" />
 
                 </RelativeLayout>

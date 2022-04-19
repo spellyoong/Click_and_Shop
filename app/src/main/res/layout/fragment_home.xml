@@ -3,19 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".homeFragment"
-    android:background="@color/grey">
+    android:background="@color/grey"
+    tools:context=".homeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
+        android:id="@+id/mainHeaderRelLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mainHeaderRelLayout"
-        android:paddingTop="15dp"
+        android:background="@color/white"
         android:paddingLeft="10dp"
+        android:paddingTop="15dp"
         android:paddingRight="10dp"
-        android:paddingBottom="15dp"
-        android:background="@color/white" >
+        android:paddingBottom="15dp">
 
         <RelativeLayout
             android:id="@+id/searchLayout"
@@ -32,12 +31,15 @@
                 android:src="@drawable/ic_search_icon" />
 
             <EditText
+                android:id="@+id/searchEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/searchIcon"
                 android:background="@null"
                 android:hint="Search what you need"
+                android:inputType="text"
+                android:singleLine="true"
                 android:textColorHint="@color/orange_1"
                 android:textSize="14sp" />
 
@@ -50,6 +52,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_toLeftOf="@id/chatIcon"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="5dp"
             android:src="@drawable/ic_shopping_cart_icon" />
 
@@ -59,6 +62,7 @@
             android:layout_height="36dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="5dp"
             android:src="@drawable/ic_chat_icon" />
 
@@ -82,10 +86,10 @@
                 android:src="@drawable/hero_banner" />
 
             <RelativeLayout
+                android:id="@+id/allCatContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/heroBanner"
-                android:id="@+id/allCatContainer"
                 android:background="@color/white">
 
                 <TextView
@@ -97,18 +101,19 @@
                     android:text="Click n' Shop" />
 
                 <LinearLayout
+                    android:id="@+id/catRow1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/catTxt"
                     android:orientation="horizontal"
-                    android:padding="15dp"
-                    android:id="@+id/catRow1">
+                    android:padding="15dp">
 
                     <RelativeLayout
                         android:id="@+id/cat1Container"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/cat1Icon"
@@ -134,7 +139,8 @@
                         android:id="@+id/cat2Container"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/cat2Icon"
@@ -154,11 +160,13 @@
                             android:textSize="11sp" />
 
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:id="@+id/cat3Container"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/cat3Icon"
@@ -178,11 +186,13 @@
                             android:textSize="11sp" />
 
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:id="@+id/cat4Container"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/cat4Icon"
@@ -202,11 +212,13 @@
                             android:textSize="11sp" />
 
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:id="@+id/cat5Container"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/cat5Icon"
@@ -240,7 +252,8 @@
                         android:id="@+id/cat6Container"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/cat6Icon"
@@ -265,7 +278,8 @@
                         android:id="@+id/cat7Container"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/cat7Icon"
@@ -290,7 +304,8 @@
                         android:id="@+id/cat8Container"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/cat8Icon"
@@ -316,7 +331,8 @@
                         android:id="@+id/cat9Container"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/cat9Icon"
@@ -341,7 +357,8 @@
                         android:id="@+id/cat10Container"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/cat10Icon"
@@ -445,6 +462,9 @@
                 android:layout_height="64dp"
                 android:layout_below="@id/recommendContainer"
                 android:background="@color/white" />
+
         </RelativeLayout>
+
     </ScrollView>
+
 </RelativeLayout>

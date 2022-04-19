@@ -8,11 +8,14 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,9 +29,10 @@ import java.util.List;
  */
 public class homeFragment extends Fragment implements RecyclerViewInterface{
 
-    // Initiate variables for recycler view
-    RecyclerView recyclerView;
-    RecyclerAdapter recyclerAdapter;
+    // Initiate variables
+    private RecyclerView recyclerView;
+    private RecyclerAdapter recyclerAdapter;
+    private Toast prototypeToast;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -168,6 +172,22 @@ public class homeFragment extends Fragment implements RecyclerViewInterface{
             }
         });
 
+        // Search
+        EditText searchEditText = v.findViewById(R.id.searchEditText);
+
+        searchEditText.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    displayPrototypeMessage();
+                    searchEditText.setText("");
+                    return true;
+                }
+                return false;
+            }
+        });
+
         // Cart page navigation
         ImageView cartIcon = v.findViewById(R.id.cartIcon);
 
@@ -189,9 +209,6 @@ public class homeFragment extends Fragment implements RecyclerViewInterface{
                 startActivity(intent);
             }
         });
-
-
-
 
         // Retrieve products list from Products.java
         List<Products> topProdList = new ArrayList<Products>();
@@ -273,9 +290,18 @@ public class homeFragment extends Fragment implements RecyclerViewInterface{
         return v;
     }
 
+    // Product page navigation
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), ProductActivity.class).putExtra("position", position).putExtra("sortTopProd", true);
         startActivity(intent);
+    }
+
+    // Prototype Message
+    private void displayPrototypeMessage(){
+        if (prototypeToast != null)
+            prototypeToast.cancel();
+        prototypeToast = Toast.makeText(getActivity(), "Function not implemented in current prototype version", Toast.LENGTH_SHORT);
+        prototypeToast.show();
     }
 }

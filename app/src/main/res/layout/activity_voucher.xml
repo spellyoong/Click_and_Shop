@@ -1,191 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="15dp"
     tools:context=".VoucherActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/voucherRelLayout"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginRight="22dp" >
+        android:id="@+id/voucherHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp">
 
-        <RelativeLayout
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow_1" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/voucherSubContainer">
-
-            <ImageView
-                android:id="@+id/backArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_back_arrow_1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/alata"
-                android:text="Vouchers"
-                android:textSize="23sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <View
-            android:id="@+id/voucherLine0"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/voucherSubContainer"
-            android:layout_marginTop="20dp"
-            android:background="@color/grey" />
-
-        <RelativeLayout
-            android:id="@+id/voucherContainer1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/voucherLine0"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp">
-
-            <RelativeLayout
-                android:id="@+id/voucherTxtContainer1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true">
-
-                <TextView
-                    android:id="@+id/voucherHeader1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/alata"
-                    android:text="@string/voucherHeader1"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/voucherValidTxt1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/voucherHeader1"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/voucherValidTxt1"
-                    android:textColor="@color/grey_2"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:id="@+id/voucherTermsTxt1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/voucherValidTxt1"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/abeezee"
-                    android:text="@string/voucherTermsTxt"
-                    android:textColor="@color/link_blue"
-                    android:textSize="13sp" />
-
-            </RelativeLayout>
-
-            <Button
-                android:id="@+id/voucherClaimButton1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/my_button_bg"
-                android:fontFamily="@font/alata"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:text="Claim"
-                android:textAllCaps="false"
-                android:textSize="10sp" />
-
-        </RelativeLayout>
-
-        <View
-            android:id="@+id/voucherLine1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/voucherContainer1"
-            android:background="@color/grey" />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/voucherLine1"
-            android:id="@+id/voucherContainer2"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp">
-
-            <RelativeLayout
-                android:id="@+id/voucherTxtContainer2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true" >
-
-                <TextView
-                    android:id="@+id/voucherHeader2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/alata"
-                    android:text="@string/voucherHeader2"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/voucherValidTxt2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/voucherHeader2"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/abeezee"
-                    android:textColor="@color/grey_2"
-                    android:text="@string/voucherValidTxt2"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:id="@+id/voucherTermsTxt2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/voucherValidTxt2"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/abeezee"
-                    android:textColor="@color/link_blue"
-                    android:text="@string/voucherTermsTxt"
-                    android:textSize="13sp" />
-
-            </RelativeLayout>
-
-            <Button
-                android:id="@+id/voucherClaimButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:text="Claim"
-                android:textAllCaps="false"
-                android:fontFamily="@font/alata"
-                android:textSize="10sp"
-                android:background="@drawable/my_button_bg"
-                android:minHeight="0dp"
-                android:minWidth="0dp" />
-
-        </RelativeLayout>
-
-        <View
-            android:id="@+id/voucherLine2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/voucherContainer2"
-            android:background="@color/grey" />
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/alata"
+            android:text="Vouchers"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:id="@+id/voucherLine0"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/voucherHeader"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="22dp"
+        android:background="@color/grey" />
+
+    <ScrollView
+        android:id="@+id/voucherScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/voucherLine0">
+
+        <LinearLayout
+            android:id="@+id/voucherContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="22dp"
+            android:paddingTop="15dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="25dp">
+
+            <RelativeLayout
+                android:id="@+id/voucherContainer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/voucherTxtContainer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/voucherHeader1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/voucherHeader1"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/voucherValidTxt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/voucherHeader1"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/abeezee"
+                        android:text="@string/voucherValidTxt1"
+                        android:textColor="@color/grey_2"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/voucherTermsTxt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/voucherValidTxt1"
+                        android:layout_marginTop="10dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:fontFamily="@font/abeezee"
+                        android:text="@string/voucherTermsTxt"
+                        android:textColor="@color/link_blue"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/voucherClaimButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/my_button_bg"
+                    android:fontFamily="@font/alata"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Claim"
+                    android:textAllCaps="false"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/voucherLine1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:id="@+id/voucherContainer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/voucherTxtContainer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/voucherHeader2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alata"
+                        android:text="@string/voucherHeader2"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/voucherValidTxt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/voucherHeader2"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/abeezee"
+                        android:text="@string/voucherValidTxt2"
+                        android:textColor="@color/grey_2"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/voucherTermsTxt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/voucherValidTxt2"
+                        android:layout_marginTop="10dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:fontFamily="@font/abeezee"
+                        android:text="@string/voucherTermsTxt"
+                        android:textColor="@color/link_blue"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/voucherClaimButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/my_button_bg"
+                    android:fontFamily="@font/alata"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Claim"
+                    android:textAllCaps="false"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/voucherLine2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

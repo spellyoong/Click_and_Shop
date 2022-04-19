@@ -1,256 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="15dp"
     tools:context=".CartActivity">
 
     <RelativeLayout
-        android:id="@+id/cartRelLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="15dp">
+        android:id="@+id/cartHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp">
 
-        <RelativeLayout
-            android:id="@+id/cartSubContainer"
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow_1" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="22dp"
-            android:paddingRight="22dp">
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/alata"
+            android:text="Shopping Cart"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/backArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_back_arrow_1" />
+    </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/alata"
-                android:text="Shopping Cart"
-                android:textSize="23sp"
-                android:textStyle="bold" />
+    <View
+        android:id="@+id/cartLine0"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/cartHeader"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="22dp"
+        android:background="@color/grey" />
 
-        </RelativeLayout>
-
-        <View
-            android:id="@+id/cartLine0"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/cartSubContainer"
-            android:layout_marginLeft="22dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="22dp"
-            android:background="@color/grey" />
-
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/cartScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cartLine0">
-
-            <RelativeLayout
-                android:id="@+id/cartContainer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingBottom="100dp">
-
-                <RelativeLayout
-                    android:id="@+id/cartContent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/shopHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="22dp"
-                        android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/alata"
-                        android:text="OUM Official Shop"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recycler_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/shopHeader" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/subTotalPriceContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/cartContent"
-                    android:layout_marginLeft="22dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="22dp">
-
-                    <TextView
-                        android:id="@+id/cartItemCountTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins"
-                        android:text="Sub total (3 items)"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/shippingTxt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/cartItemCountTextView"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Shipping"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/shopTxt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/shippingTxt"
-                        android:fontFamily="@font/poppins"
-                        android:text="from OUM Official Shop"
-                        android:textColor="@color/grey_3"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:id="@+id/subTotal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:fontFamily="@font/poppins"
-                        android:text="RM 999.90"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/shippingFee"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/subTotal"
-                        android:layout_alignLeft="@id/subTotal"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins"
-                        android:text="RM 99.90"
-                        android:textColor="@color/grey_3"
-                        android:textSize="13sp" />
-
-                </RelativeLayout>
-
-                <View
-                    android:id="@+id/cartLine1"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@id/subTotalPriceContainer"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/grey" />
-
-                <RelativeLayout
-                    android:id="@+id/totalPriceContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/cartLine1"
-                    android:layout_marginLeft="22dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="22dp">
-
-                    <TextView
-                        android:id="@+id/totalTxt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins"
-                        android:text="Total"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/totalPrice"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:fontFamily="@font/poppins"
-                        android:text="RM 999.90"
-                        android:textColor="@color/orange_1"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-
-        </androidx.core.widget.NestedScrollView>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/cartScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cartLine0">
 
         <RelativeLayout
-            android:id="@+id/emptyCartContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/cartLine0"
-            android:visibility="gone">
+            android:id="@+id/cartContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="100dp">
 
             <RelativeLayout
-                android:id="@+id/emptyCartContent"
+                android:id="@+id/cartContent"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/emptyCartTxt"
+                    android:id="@+id/shopHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/alata"
-                    android:text="Your Cart Is Empty"
-                    android:textColor="@color/grey_2"
-                    android:textSize="14sp" />
+                    android:text="OUM Official Shop"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/shopNowBtn"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shopHeader" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/subTotalPriceContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cartContent"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="22dp">
+
+                <TextView
+                    android:id="@+id/cartItemCountTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/emptyCartTxt"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/alata"
-                    android:text="Continue Shopping"
-                    android:textSize="14sp" />
+                    android:fontFamily="@font/poppins"
+                    android:text="Sub total (3 items)"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/shippingTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cartItemCountTextView"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Shipping"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/shopTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shippingTxt"
+                    android:fontFamily="@font/poppins"
+                    android:text="from OUM Official Shop"
+                    android:textColor="@color/grey_3"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/subTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/poppins"
+                    android:text="RM 999.90"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/shippingFee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/subTotal"
+                    android:layout_alignLeft="@id/subTotal"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="RM 99.90"
+                    android:textColor="@color/grey_3"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/cartLine1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/subTotalPriceContainer"
+                android:layout_marginTop="20dp"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:id="@+id/totalPriceContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cartLine1"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="22dp">
+
+                <TextView
+                    android:id="@+id/totalTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Total"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/poppins"
+                    android:text="RM 999.90"
+                    android:textColor="@color/orange_1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
             </RelativeLayout>
 
         </RelativeLayout>
 
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/emptyCartContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cartLine0"
+        android:visibility="gone">
 
         <RelativeLayout
-            android:id="@+id/checkOutContainer"
-            android:layout_width="match_parent"
+            android:id="@+id/emptyCartContent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/cart_footer_bg"
-            android:padding="10dp">
+            android:layout_centerInParent="true">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/checkOutBtn"
+            <TextView
+                android:id="@+id/emptyCartTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/my_button_bg"
+                android:layout_centerHorizontal="true"
                 android:fontFamily="@font/alata"
-                android:paddingLeft="25dp"
-                android:paddingRight="25dp"
-                android:text="Check Out"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:text="Your Cart Is Empty"
+                android:textColor="@color/grey_2"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/shopNowBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/emptyCartTxt"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/alata"
+                android:text="Continue Shopping"
+                android:textSize="14sp" />
 
         </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/checkOutContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/cart_footer_bg"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/checkOutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/my_button_bg"
+            android:fontFamily="@font/alata"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:text="Check Out"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
     </RelativeLayout>
 

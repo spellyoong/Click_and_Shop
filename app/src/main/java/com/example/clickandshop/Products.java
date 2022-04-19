@@ -24,7 +24,6 @@ public class Products {
     Products prod9;
     Products prod10;
 
-
     public Products(int productID, int productPhoto, String productName, double productPrice, double soldQty, String productDesc, double productRate) {
         this.productID = productID;
         this.productPhoto = productPhoto;

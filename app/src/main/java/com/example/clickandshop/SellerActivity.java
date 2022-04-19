@@ -9,9 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,21 +23,47 @@ import java.util.List;
 
 public class SellerActivity extends AppCompatActivity implements RecyclerViewInterface{
 
-    // Initiate variables for recycler view
-    RecyclerView recyclerView;
-    RecyclerAdapter recyclerAdapter;
-    NestedScrollView sellerScrollView;
-    RelativeLayout sellerSubContainer;
+    // Initiate variables
+    private NestedScrollView sellerScrollView;
+    private RelativeLayout sellerSubContainer;
+    private RecyclerView recyclerView;
+    private RecyclerAdapter recyclerAdapter;
     private View backArrow;
-    private View chatBtn;
     private View cartIcon;
+    private View chatBtn;
+    private View productNav;
+    private View categoriesNav;
+    private Toast prototypeToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller);
 
-        // Retrieve products list from Products.java
+        // =========== ScrollView Start ===========
+        // Explanation: To set transparent background overlay on header when user scroll down
+
+        sellerScrollView = findViewById(R.id.sellerScrollView);
+        sellerSubContainer = findViewById(R.id.sellerSubContainer);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            sellerScrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+                @Override
+                public void onScrollChange(View view, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                    if (scrollY != 0) {
+                        // Check if scroll position is not reaches the top
+                        sellerSubContainer.setBackgroundResource(R.drawable.seller_header_bg);
+                    }
+                    else {
+                        sellerSubContainer.setBackground(null);
+                    }
+                }
+            });
+        }
+        // =========== ScrollView End ===========
+
+        // =========== RecyclerView Start ===========
+        // Retrieve products list from Products.java (Top Product)
         List<Products> topProdList = new ArrayList<Products>();
         topProdList = new Products().getProdList();
 
@@ -66,33 +95,11 @@ public class SellerActivity extends AppCompatActivity implements RecyclerViewInt
         // RecyclerView Adapter
         recyclerAdapter = new RecyclerAdapter(SellerActivity.this, topProdList, this);
         recyclerView.setAdapter(recyclerAdapter);
+        // =========== RecyclerView End ===========
 
-        // =========== ScrollView Start ===========
-        // Explanation: To set background on header when user scroll down
-
-        sellerScrollView = findViewById(R.id.sellerScrollView);
-        sellerSubContainer = findViewById(R.id.sellerSubContainer);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            sellerScrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-                @Override
-                public void onScrollChange(View view, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                    if (scrollY != 0) {
-                        // Check if scroll position is not reaches the top
-                        sellerSubContainer.setBackgroundResource(R.drawable.seller_header_bg);
-                    }
-                    else {
-                        sellerSubContainer.setBackground(null);
-                    }
-                }
-            });
-        }
-        // =========== ScrollView End ===========
 
         // =========== GridView Start ===========
-        // Explanation: Display products in GridView
-
-        // Retrieve products list from Products.java
+        // Retrieve products list from Products.java (Campaign)
         List<Products> list = new ArrayList<Products>();
         list = new Products().getProdList();
 
@@ -147,6 +154,22 @@ public class SellerActivity extends AppCompatActivity implements RecyclerViewInt
             }
         });
 
+        // Search
+        EditText searchEditText = findViewById(R.id.searchEditText);
+
+        searchEditText.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    displayPrototypeMessage();
+                    searchEditText.setText("");
+                    return true;
+                }
+                return false;
+            }
+        });
+
         // Cart navigation
         cartIcon = findViewById(R.id.cartIcon);
 
@@ -168,11 +191,38 @@ public class SellerActivity extends AppCompatActivity implements RecyclerViewInt
                 startActivity(intent);
             }
         });
+
+        // Seller page navigation bar
+        productNav = findViewById(R.id.productNav);
+        categoriesNav = findViewById(R.id.categoriesNav);
+
+        productNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayPrototypeMessage();
+            }
+        });
+
+        categoriesNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayPrototypeMessage();
+            }
+        });
     }
 
+    // Product page navigation
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(SellerActivity.this, ProductActivity.class).putExtra("position", position).putExtra("sortTopProd", true);
         startActivity(intent);
+    }
+
+    // Prototype Message
+    private void displayPrototypeMessage(){
+        if (prototypeToast != null)
+            prototypeToast.cancel();
+        prototypeToast = Toast.makeText(SellerActivity.this, "Function not implemented in current prototype version", Toast.LENGTH_SHORT);
+        prototypeToast.show();
     }
 }

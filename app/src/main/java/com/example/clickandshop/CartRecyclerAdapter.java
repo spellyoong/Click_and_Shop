@@ -19,13 +19,13 @@ import android.app.AlertDialog;
 
 public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapter.Viewholder> {
 
-    List<Cart> list;
+    List<Cart> cartList;
     Context context;
     private final RecyclerViewInterface3 recyclerViewInterface;
 
-    public CartRecyclerAdapter(Context context, List<Cart> list, RecyclerViewInterface3 recyclerViewInterface){
+    public CartRecyclerAdapter(Context context, List<Cart> cartList, RecyclerViewInterface3 recyclerViewInterface){
         this.context = context;
-        this.list = list;
+        this.cartList = cartList;
         this.recyclerViewInterface = recyclerViewInterface;
     }
 
@@ -39,13 +39,13 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         // Set contents into target views
-        holder.prodNameTextView.setText(list.get(position).getProductName());
-        holder.prodImageView.setImageResource(list.get(position).getProductPhoto());
+        holder.prodNameTextView.setText(cartList.get(position).getProductName());
+        holder.prodImageView.setImageResource(cartList.get(position).getProductPhoto());
         // Convert price into String with 2 decimal value
-        String formattedPrice = String.format("%.2f", list.get(position).getProductPrice() * list.get(position).getProdQuantity());
+        String formattedPrice = String.format("%.2f", cartList.get(position).getProductPrice());
         holder.prodPriceTextView.setText(formattedPrice);
-        holder.qtyTextView.setText(String.valueOf(list.get(position).getProdQuantity()));
-        if (list.get(position).isProdCheck())
+        holder.qtyTextView.setText(String.valueOf(cartList.get(position).getProdQuantity()));
+        if (cartList.get(position).isProdCheck())
             holder.checkBox.setChecked(true);
         else
             holder.checkBox.setChecked(false);
@@ -54,7 +54,7 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return cartList.size();
     }
 
     public class Viewholder extends RecyclerView.ViewHolder {
@@ -76,7 +76,7 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
             minusBtn = itemView.findViewById(R.id.minusBtn);
             plusBtn = itemView.findViewById(R.id.plusBtn);
 
-            // Cart item checkbox
+            // Checkbox action
             checkBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -85,9 +85,9 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
 
                         if (position != RecyclerView.NO_POSITION){
                             if (checkBox.isChecked())
-                                list.get(position).setProdCheck(true);
+                                cartList.get(position).setProdCheck(true);
                             else
-                                list.get(position).setProdCheck(false);
+                                cartList.get(position).setProdCheck(false);
                             recyclerViewInterface.onCheckBoxClick(position);
                         }
                     }
@@ -102,7 +102,7 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
                         int position = getAdapterPosition();
 
                         if (position != RecyclerView.NO_POSITION){
-                            if (list.get(position).getProdQuantity() == 1){
+                            if (cartList.get(position).getProdQuantity() == 1){
                                 AlertDialog.Builder builder;
                                 builder = new AlertDialog.Builder(minusBtn.getContext());
                                 builder.setMessage("Do you want to remove this product?")
@@ -110,8 +110,9 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
                                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialogInterface, int i) {
-                                                list.remove(position);
-                                                recyclerViewInterface.onSubtractQtyClick(position, true);
+                                                cartList.remove(position);
+                                                recyclerViewInterface.onSubtractQtyClick(position);
+                                                notifyDataSetChanged();
                                             }
                                         })
                                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -123,9 +124,9 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
                                         .show();
                             }
                             else {
-                                list.get(position).setProdQuantity(list.get(position).getProdQuantity()-1);
-                                qtyTextView.setText(String.valueOf(list.get(position).getProdQuantity()));
-                                recyclerViewInterface.onSubtractQtyClick(position, false);
+                                cartList.get(position).setProdQuantity(cartList.get(position).getProdQuantity()-1);
+                                qtyTextView.setText(String.valueOf(cartList.get(position).getProdQuantity()));
+                                recyclerViewInterface.onSubtractQtyClick(position);
                             }
                         }
                     }
@@ -140,8 +141,8 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
                         int position = getAdapterPosition();
 
                         if (position != RecyclerView.NO_POSITION){
-                            list.get(position).setProdQuantity(list.get(position).getProdQuantity()+1);
-                            qtyTextView.setText(String.valueOf(list.get(position).getProdQuantity()));
+                            cartList.get(position).setProdQuantity(cartList.get(position).getProdQuantity()+1);
+                            qtyTextView.setText(String.valueOf(cartList.get(position).getProdQuantity()));
                             recyclerViewInterface.onAddQtyClick(position);
                         }
                     }

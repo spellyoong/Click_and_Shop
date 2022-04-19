@@ -7,6 +7,7 @@ import android.view.View;
 
 public class ReviewActivity extends AppCompatActivity {
 
+    // Initiate variables
     private View backArrow;
 
     @Override

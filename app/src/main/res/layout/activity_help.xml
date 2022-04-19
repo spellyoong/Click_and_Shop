@@ -1,315 +1,308 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="15dp"
     tools:context=".HelpActivity">
 
     <RelativeLayout
-        android:id="@+id/helpRelLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="15dp">
+        android:id="@+id/helpHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp">
 
-        <RelativeLayout
-            android:id="@+id/helpSubContainer"
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow_1" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="22dp"
-            android:paddingRight="22dp">
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/alata"
+            android:text="Help"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/backArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_back_arrow_1" />
+    </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/alata"
-                android:text="Help"
-                android:textSize="23sp"
-                android:textStyle="bold" />
+    <View
+        android:id="@+id/helpLine0"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/helpHeader"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="22dp"
+        android:background="@color/grey" />
 
-        </RelativeLayout>
+    <ScrollView
+        android:id="@+id/helpScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/helpLine0">
 
-        <View
-            android:id="@+id/helpLine0"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/helpSubContainer"
-            android:layout_marginLeft="22dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="22dp"
-            android:background="@color/grey" />
-
-        <ScrollView
-            android:id="@+id/helpScrollView"
+        <LinearLayout
+            android:id="@+id/helpContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/helpLine0">
+            android:orientation="vertical"
+            android:paddingLeft="22dp"
+            android:paddingTop="15dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="25dp">
+
+            <TextView
+                android:id="@+id/faqHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="FAQ"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/faqContainer"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/helpContainer"
-                android:orientation="vertical"
-                android:paddingTop="15dp"
-                android:paddingLeft="22dp"
-                android:paddingRight="22dp"
-                android:paddingBottom="25dp">
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/ques1Container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/abeezee"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/ques1"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/ques1Arrow"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_back_arrow" />
+
+                </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/ans1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/alata"
-                    android:text="FAQ"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:id="@+id/faqHeader" />
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/abeezee"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/ans1"
+                    android:textColor="@color/grey_2"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
 
-                <LinearLayout
+                <View
+                    android:id="@+id/helpLine1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+                <RelativeLayout
+                    android:id="@+id/ques2Container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/faqContainer"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:id="@+id/ques1Container">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/abeezee"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
-                            android:text="@string/ques1"
-                            android:textSize="13sp" />
-
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_back_arrow"
-                            android:id="@+id/ques1Arrow" />
-
-                    </RelativeLayout>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/abeezee"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/abeezee"
-                        android:text="@string/ans1"
-                        android:textColor="@color/grey_2"
-                        android:textSize="13sp"
-                        android:visibility="gone"
-                        android:id="@+id/ans1"/>
+                        android:text="@string/ques2"
+                        android:textSize="13sp" />
 
-                    <View
-                        android:id="@+id/helpLine1"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/grey" />
+                    <ImageView
+                        android:id="@+id/ques2Arrow"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_back_arrow" />
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:id="@+id/ques2Container">
+                </RelativeLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/abeezee"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
-                            android:text="@string/ques2"
-                            android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/ans2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/abeezee"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/ans2"
+                    android:textColor="@color/grey_2"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
 
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_back_arrow"
-                            android:id="@+id/ques2Arrow" />
+                <View
+                    android:id="@+id/helpLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
 
-                    </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/ques3Container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/abeezee"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/abeezee"
-                        android:text="@string/ans2"
-                        android:textColor="@color/grey_2"
-                        android:textSize="13sp"
-                        android:visibility="gone"
-                        android:id="@+id/ans2"/>
+                        android:text="@string/ques3"
+                        android:textSize="13sp" />
 
-                    <View
-                        android:id="@+id/helpLine2"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/grey" />
+                    <ImageView
+                        android:id="@+id/ques3Arrow"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_back_arrow" />
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:id="@+id/ques3Container">
+                </RelativeLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/abeezee"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
-                            android:text="@string/ques3"
-                            android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/ans3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/abeezee"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/ans3"
+                    android:textColor="@color/grey_2"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
 
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_back_arrow"
-                            android:id="@+id/ques3Arrow" />
+                <View
+                    android:id="@+id/helpLine3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
 
-                    </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/ques4Container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/abeezee"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/abeezee"
-                        android:text="@string/ans3"
-                        android:textColor="@color/grey_2"
-                        android:textSize="13sp"
-                        android:visibility="gone"
-                        android:id="@+id/ans3"/>
+                        android:text="@string/ques4"
+                        android:textSize="13sp" />
 
-                    <View
-                        android:id="@+id/helpLine3"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/grey" />
+                    <ImageView
+                        android:id="@+id/ques4Arrow"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_back_arrow" />
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:id="@+id/ques4Container">
+                </RelativeLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/abeezee"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
-                            android:text="@string/ques4"
-                            android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/ans4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/abeezee"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/ans4"
+                    android:textColor="@color/grey_2"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
 
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_back_arrow"
-                            android:id="@+id/ques4Arrow" />
+                <View
+                    android:id="@+id/helpLine4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
 
-                    </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/ques5Container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/abeezee"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/abeezee"
-                        android:text="@string/ans4"
-                        android:textColor="@color/grey_2"
-                        android:textSize="13sp"
-                        android:visibility="gone"
-                        android:id="@+id/ans4"/>
+                        android:text="@string/ques5"
+                        android:textSize="13sp" />
 
-                    <View
-                        android:id="@+id/helpLine4"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/grey" />
+                    <ImageView
+                        android:id="@+id/ques5Arrow"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_back_arrow" />
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:id="@+id/ques5Container">
+                </RelativeLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/abeezee"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
-                            android:text="@string/ques5"
-                            android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/ans5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/abeezee"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/ans5"
+                    android:textColor="@color/grey_2"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
 
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_back_arrow"
-                            android:id="@+id/ques5Arrow" />
-
-                    </RelativeLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:fontFamily="@font/abeezee"
-                        android:text="@string/ans5"
-                        android:layout_marginBottom="5dp"
-                        android:textColor="@color/grey_2"
-                        android:textSize="13sp"
-                        android:visibility="gone"
-                        android:id="@+id/ans5"/>
-
-                    <View
-                        android:id="@+id/helpLine5"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/grey" />
-
-                </LinearLayout>
+                <View
+                    android:id="@+id/helpLine5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
 
             </LinearLayout>
 
-        </ScrollView>
+        </LinearLayout>
 
-    </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</RelativeLayout>

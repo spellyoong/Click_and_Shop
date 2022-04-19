@@ -33,14 +33,14 @@
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_categories.xml" value="0.264" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_chat1.xml" value="0.264" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_chat2.xml" value="0.264" />
-        <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_detail.xml" value="0.152" />
-        <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_help.xml" value="0.38915470494417864" />
+        <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_detail.xml" value="0.176" />
+        <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_help.xml" value="0.264" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_my_profile.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_order.xml" value="0.4" />
+        <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_order.xml" value="0.264" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_product.xml" value="0.264" />
-        <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_review.xml" value="0.3418803418803419" />
+        <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_review.xml" value="0.264" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_seller.xml" value="0.264" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/activity_voucher.xml" value="0.264" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/fragment_highlight.xml" value="0.264" />
@@ -56,6 +56,7 @@
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/layout/row_items_5.xml" value="0.4" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/yoong/AndroidStudioProjects/ClickandShop/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
+        <entry key="..\:/Users/yoong/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.20854700854700856" />
       </map>
     </option>
   </component>

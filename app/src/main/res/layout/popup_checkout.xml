@@ -75,8 +75,8 @@
                 android:id="@+id/addressArrow"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:padding="7dp"
                 android:src="@drawable/ic_back_arrow" />
 
@@ -121,8 +121,8 @@
                 android:id="@+id/paymentArrow"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:padding="7dp"
                 android:src="@drawable/ic_back_arrow" />
 

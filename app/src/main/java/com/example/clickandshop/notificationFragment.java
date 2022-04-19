@@ -3,13 +3,10 @@ package com.example.clickandshop;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -77,7 +74,6 @@ public class notificationFragment extends Fragment {
                 BottomNavigationView navigationView;
                 navigationView = getActivity().findViewById(R.id.bottomNavigationView);
                 navigationView.setSelectedItemId(R.id.highlightFragment);
-                //getFragmentManager().beginTransaction().replace(R.id.fragmentContainerActivity, new highlightFragment()).commit();
             }
         });
 
@@ -87,7 +83,6 @@ public class notificationFragment extends Fragment {
                 BottomNavigationView navigationView;
                 navigationView = getActivity().findViewById(R.id.bottomNavigationView);
                 navigationView.setSelectedItemId(R.id.highlightFragment);
-                //getFragmentManager().beginTransaction().replace(R.id.fragmentContainerActivity, new highlightFragment()).commit();
             }
         });
 

@@ -1,182 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="15dp"
     tools:context=".AddressActivity1">
 
     <RelativeLayout
-        android:id="@+id/addressRelLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="15dp" >
+        android:id="@+id/addressHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp">
 
-        <RelativeLayout
-            android:id="@+id/addressSubContainer"
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow_1" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="22dp"
-            android:paddingRight="22dp">
-
-            <ImageView
-                android:id="@+id/backArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_back_arrow_1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/alata"
-                android:text="Delivery Address"
-                android:textSize="23sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <View
-            android:id="@+id/addressLine0"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/addressSubContainer"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="22dp"
-            android:background="@color/grey" />
-
-        <ScrollView
-            android:id="@+id/addressScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/addressLine0" >
-
-            <RelativeLayout
-                android:id="@+id/addressContainer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingLeft="22dp"
-                android:paddingRight="22dp"
-                android:paddingBottom="25dp" >
-
-                <RelativeLayout
-                    android:id="@+id/AddressContainer1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/addressHeader1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Address 1"
-                        android:textColor="@color/orange_1"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/addressName1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/addressHeader1"
-                        android:fontFamily="@font/alata"
-                        android:text="@string/addressName1"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/addressTxt1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/addressName1"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/abeezee"
-                        android:text="@string/addressTxt1"
-                        android:textColor="@color/grey_2"
-                        android:textSize="13sp" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_back_arrow" />
-
-
-                </RelativeLayout>
-
-                <View
-                    android:id="@+id/addressLine1"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@id/AddressContainer1"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/grey" />
-
-                <RelativeLayout
-                    android:id="@+id/AddressContainer2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/addressLine1"
-                    android:layout_marginTop="15dp">
-
-                    <TextView
-                        android:id="@+id/addressHeader2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Address 2"
-                        android:textColor="@color/orange_1"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/addressName2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/addressHeader2"
-                        android:fontFamily="@font/alata"
-                        android:text="@string/addressName2"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/addressTxt2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/addressName2"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/abeezee"
-                        android:text="@string/addressTxt2"
-                        android:textColor="@color/grey_2"
-                        android:textSize="13sp" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_back_arrow" />
-
-
-                </RelativeLayout>
-
-                <View
-                    android:id="@+id/addressLine2"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@id/AddressContainer2"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/grey" />
-
-            </RelativeLayout>
-
-        </ScrollView>
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/alata"
+            android:text="Delivery Address"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:id="@+id/addressLine0"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/addressHeader"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="22dp"
+        android:background="@color/grey" />
+
+    <ScrollView
+        android:id="@+id/addressScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addressLine0">
+
+        <LinearLayout
+            android:id="@+id/addressContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="22dp"
+            android:paddingTop="15dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="25dp">
+
+            <RelativeLayout
+                android:id="@+id/AddressContainer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/addressHeader1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Address 1"
+                    android:textColor="@color/orange_1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/addressName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/addressHeader1"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/addressName1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/addressTxt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/addressName1"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/addressTxt1"
+                    android:textColor="@color/grey_2"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:src="@drawable/ic_back_arrow" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/addressLine1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:id="@+id/AddressContainer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/addressHeader2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Address 2"
+                    android:textColor="@color/orange_1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/addressName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/addressHeader2"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/addressName2"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/addressTxt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/addressName2"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/abeezee"
+                    android:text="@string/addressTxt2"
+                    android:textColor="@color/grey_2"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:src="@drawable/ic_back_arrow" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/addressLine2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/grey" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

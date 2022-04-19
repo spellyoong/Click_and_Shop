@@ -1,275 +1,275 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="15dp"
     tools:context=".DetailActivity">
 
     <RelativeLayout
-        android:id="@+id/detailRelLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="15dp" >
+        android:id="@+id/detailHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp">
 
-        <RelativeLayout
-            android:id="@+id/detailSubContainer"
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow_1" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="22dp"
-            android:paddingRight="22dp" >
-
-            <ImageView
-                android:id="@+id/backArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_back_arrow_1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/alata"
-                android:text="My Details"
-                android:textSize="23sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <View
-            android:id="@+id/detailLine0"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/detailSubContainer"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="22dp"
-            android:background="@color/grey" />
-
-        <ScrollView
-            android:id="@+id/detailScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/detailLine0" >
-
-            <RelativeLayout
-                android:id="@+id/detailContainer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingLeft="22dp"
-                android:paddingRight="22dp"
-                android:paddingBottom="25dp">
-
-                <RelativeLayout
-                    android:id="@+id/firstNameContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/firstNameHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="First Name"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/firstNameTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/firstNameHeader"
-                        android:layout_marginTop="7dp"
-                        android:background="@drawable/edit_text_field_bg"
-                        android:fontFamily="@font/alata"
-                        android:paddingLeft="16dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="10dp"
-                        android:text="Kai Leon"
-                        android:textSize="15sp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/lastNameContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/firstNameContainer"
-                    android:layout_marginTop="22dp">
-
-                    <TextView
-                        android:id="@+id/lastNameHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Last Name"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/lastNameTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/lastNameHeader"
-                        android:layout_marginTop="7dp"
-                        android:background="@drawable/edit_text_field_bg"
-                        android:fontFamily="@font/alata"
-                        android:paddingLeft="16dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="10dp"
-                        android:text="Yoong"
-                        android:textSize="15sp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/emailContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/lastNameContainer"
-                    android:layout_marginTop="22dp">
-
-                    <TextView
-                        android:id="@+id/emailHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Email"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/emailTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/emailHeader"
-                        android:layout_marginTop="7dp"
-                        android:background="@drawable/edit_text_field_bg"
-                        android:fontFamily="@font/alata"
-                        android:paddingLeft="16dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="10dp"
-                        android:text="spellyoong@oum.edu.my"
-                        android:textSize="15sp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/phoneContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/emailContainer"
-                    android:layout_marginTop="22dp">
-
-                    <TextView
-                        android:id="@+id/phoneHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Phone"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/phoneTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/phoneHeader"
-                        android:layout_marginTop="7dp"
-                        android:background="@drawable/edit_text_field_bg"
-                        android:fontFamily="@font/alata"
-                        android:paddingLeft="16dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="10dp"
-                        android:text="60105641090"
-                        android:textSize="15sp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/birthdayContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/phoneContainer"
-                    android:layout_marginTop="22dp">
-
-                    <TextView
-                        android:id="@+id/birthdayHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Birthday"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/birthdayTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/birthdayHeader"
-                        android:layout_marginTop="7dp"
-                        android:background="@drawable/edit_text_field_bg"
-                        android:fontFamily="@font/alata"
-                        android:paddingLeft="16dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="10dp"
-                        android:text="13/05/1995"
-                        android:textSize="15sp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/genderContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/birthdayContainer"
-                    android:layout_marginTop="22dp">
-
-                    <TextView
-                        android:id="@+id/genderHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/alata"
-                        android:text="Gender"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/genderTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/genderHeader"
-                        android:layout_marginTop="7dp"
-                        android:background="@drawable/edit_text_field_bg"
-                        android:fontFamily="@font/alata"
-                        android:paddingLeft="16dp"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="10dp"
-                        android:text="Male"
-                        android:textSize="15sp" />
-
-                </RelativeLayout>
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/updateDetailBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/genderContainer"
-                    android:layout_marginTop="22dp"
-                    android:background="@drawable/my_button_bg"
-                    android:fontFamily="@font/alata"
-                    android:text="Update Detail"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-            </RelativeLayout>
-
-        </ScrollView>
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/alata"
+            android:text="My Details"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:id="@+id/detailLine0"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/detailHeader"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="22dp"
+        android:background="@color/grey" />
+
+    <ScrollView
+        android:id="@+id/detailScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detailLine0">
+
+        <LinearLayout
+            android:id="@+id/detailContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="22dp"
+            android:paddingTop="15dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="25dp">
+
+            <RelativeLayout
+                android:id="@+id/firstNameContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/firstNameHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="First Name"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/firstNameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/firstNameHeader"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/edit_text_field_bg"
+                    android:fontFamily="@font/alata"
+                    android:hint="eg. John"
+                    android:inputType="text"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="10dp"
+                    android:singleLine="true"
+                    android:text="Kai Leon"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lastNameContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp">
+
+                <TextView
+                    android:id="@+id/lastNameHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Last Name"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/lastNameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lastNameHeader"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/edit_text_field_bg"
+                    android:fontFamily="@font/alata"
+                    android:hint="eg. Smith"
+                    android:inputType="text"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="10dp"
+                    android:singleLine="true"
+                    android:text="Yoong"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/emailContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp">
+
+                <TextView
+                    android:id="@+id/emailHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Email"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/emailTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/emailHeader"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/edit_text_field_bg"
+                    android:fontFamily="@font/alata"
+                    android:hint="eg. example@mail.com"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="10dp"
+                    android:singleLine="true"
+                    android:text="spellyoong@oum.edu.my"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/phoneContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp">
+
+                <TextView
+                    android:id="@+id/phoneHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Phone"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/phoneTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/phoneHeader"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/edit_text_field_bg"
+                    android:fontFamily="@font/alata"
+                    android:hint="eg. 0123456789"
+                    android:inputType="text"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="10dp"
+                    android:singleLine="true"
+                    android:text="0105641090"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/birthdayContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp">
+
+                <TextView
+                    android:id="@+id/birthdayHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Birthday"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/birthdayTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/birthdayHeader"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/edit_text_field_bg"
+                    android:fontFamily="@font/alata"
+                    android:hint="dd/mm/yyyy"
+                    android:inputType="date"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="10dp"
+                    android:singleLine="true"
+                    android:text="13/05/1995"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/genderContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp">
+
+                <TextView
+                    android:id="@+id/genderHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="Gender"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/genderTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/genderHeader"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/edit_text_field_bg"
+                    android:fontFamily="@font/alata"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="10dp" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/updateDetailBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/my_button_bg"
+                android:fontFamily="@font/alata"
+                android:text="Update Detail"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -35,6 +35,8 @@ public class CategoryRecyclerAdapter extends RecyclerView.Adapter<CategoryRecycl
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         // Set categoryName to TextView
         holder.textView.setText(categoryName[position]);
+
+        // Highlight & underline selected category
         if (selected_position == position){
             holder.textView.setTextColor(Color.parseColor("#FF800B"));
             holder.textView.setBackground(ContextCompat.getDrawable(context, R.drawable.category_menu_bg));

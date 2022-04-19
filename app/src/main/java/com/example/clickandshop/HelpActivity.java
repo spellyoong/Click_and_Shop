@@ -9,22 +9,23 @@ import java.util.ArrayList;
 
 public class HelpActivity extends AppCompatActivity {
 
+    // Initiate variables
     private View backArrow;
     private View ques1Container;
     private View ques2Container;
     private View ques3Container;
     private View ques4Container;
     private View ques5Container;
-    private View ans1;
-    private View ans2;
-    private View ans3;
-    private View ans4;
-    private View ans5;
     private View ques1Arrow;
     private View ques2Arrow;
     private View ques3Arrow;
     private View ques4Arrow;
     private View ques5Arrow;
+    private View ans1;
+    private View ans2;
+    private View ans3;
+    private View ans4;
+    private View ans5;
     private ArrayList<View> quesArrowList = new ArrayList<>();
     private ArrayList<View> ansList = new ArrayList<>();
 
@@ -32,6 +33,16 @@ public class HelpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
+
+        // Back key navigation
+        backArrow = findViewById(R.id.backArrow);
+
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         // FAQ navigation
         ques1Container = findViewById(R.id.ques1Container);
@@ -60,7 +71,6 @@ public class HelpActivity extends AppCompatActivity {
         ansList.add(ans3);
         ansList.add(ans4);
         ansList.add(ans5);
-
 
         ques1Container.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,17 +107,9 @@ public class HelpActivity extends AppCompatActivity {
             }
         });
 
-        // Back key navigation
-        backArrow = findViewById(R.id.backArrow);
-
-        backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
     }
 
+    // Display answer + arrow animation
     public void faqToggle(int position){
         if (ansList.get(position).getVisibility() == View.GONE){
             ansList.get(position).setVisibility(View.VISIBLE);

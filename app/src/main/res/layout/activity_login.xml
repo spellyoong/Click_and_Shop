@@ -12,11 +12,11 @@
         android:layout_height="wrap_content">
 
         <View
+            android:id="@+id/developerLogin"
             android:layout_width="200dp"
             android:layout_height="100dp"
-            android:layout_marginTop="150dp"
             android:layout_marginLeft="30dp"
-            android:id="@+id/developerLogin" />
+            android:layout_marginTop="150dp" />
 
         <ImageView
             android:id="@+id/loginBanner"
@@ -85,6 +85,7 @@
                 android:layout_below="@id/inputPassword"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="5dp"
+                android:background="?android:attr/selectableItemBackground"
                 android:text="Forgot password?" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -106,6 +107,7 @@
                 android:layout_below="@id/loginButton"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="5dp"
+                android:background="?android:attr/selectableItemBackground"
                 android:text="@string/signUp" />
 
             <TextView

@@ -8,9 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +17,18 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class profileFragment extends Fragment {
+
+    // Initiate variables
+    private View profilePic;
+    private View profileInfo;
+    private View profileOrderContainer;
+    private View profileDetailContainer;
+    private View profileLocationContainer;
+    private View profileVoucherContainer;
+    private View profileChatContainer;
+    private View profileHelpContainer;
+    private View profileAboutContainer;
+    private Toast prototypeToast;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,13 +80,32 @@ public class profileFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
         // Navigate to different activities from fragment_profile
-        View profileOrderContainer = v.findViewById(R.id.profileOrderContainer);
-        View profileDetailContainer = v.findViewById(R.id.profileDetailContainer);
-        View profileLocationContainer = v.findViewById(R.id.profileLocationContainer);
-        View profileVoucherContainer = v.findViewById(R.id.profileVoucherContainer);
-        View profileChatContainer = v.findViewById(R.id.profileChatContainer);
-        View profileHelpContainer = v.findViewById(R.id.profileHelpContainer);
-        View profileAboutContainer = v.findViewById(R.id.profileAboutContainer);
+        profilePic = v.findViewById(R.id.profilePic);
+        profileInfo = v.findViewById(R.id.profileInfo);
+        profileOrderContainer = v.findViewById(R.id.profileOrderContainer);
+        profileDetailContainer = v.findViewById(R.id.profileDetailContainer);
+        profileLocationContainer = v.findViewById(R.id.profileLocationContainer);
+        profileVoucherContainer = v.findViewById(R.id.profileVoucherContainer);
+        profileChatContainer = v.findViewById(R.id.profileChatContainer);
+        profileHelpContainer = v.findViewById(R.id.profileHelpContainer);
+        profileAboutContainer = v.findViewById(R.id.profileAboutContainer);
+
+        profilePic.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                displayPrototypeMessage();
+            }
+
+        });
+
+        profileInfo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DetailActivity.class);
+                startActivity(intent);
+            }
+
+        });
 
         profileOrderContainer.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -141,5 +171,13 @@ public class profileFragment extends Fragment {
         });
 
         return v;
+    }
+
+    // Prototype Message
+    private void displayPrototypeMessage(){
+        if (prototypeToast != null)
+            prototypeToast.cancel();
+        prototypeToast = Toast.makeText(getActivity(), "Function not implemented in current prototype version", Toast.LENGTH_SHORT);
+        prototypeToast.show();
     }
 }

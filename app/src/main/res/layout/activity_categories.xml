@@ -1,93 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="15dp"
     tools:context=".CategoriesActivity">
 
     <RelativeLayout
-        android:id="@+id/categoriesRelLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="15dp" >
+        android:id="@+id/categoriesHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp">
 
-        <RelativeLayout
-            android:id="@+id/categoriesSubContainer"
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow_1" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="22dp"
-            android:paddingRight="22dp">
-
-            <ImageView
-                android:id="@+id/backArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_back_arrow_1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/alata"
-                android:text="Categories"
-                android:textSize="23sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <View
-            android:id="@+id/categoriesLine0"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/categoriesSubContainer"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="22dp"
-            android:background="@color/grey" />
-
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/categoriesScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/categoriesLine0" >
-
-            <RelativeLayout
-                android:id="@+id/categoriesContainer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="6dp"
-                android:paddingBottom="6dp" >
-
-                <RelativeLayout
-                    android:id="@+id/CategoriesContainer1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recycler_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </RelativeLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/CategoriesContainer1"
-                    android:layout_marginLeft="7.5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="7.5dp" />
-
-            </RelativeLayout>
-
-        </androidx.core.widget.NestedScrollView>
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/alata"
+            android:text="Categories"
+            android:textSize="23sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:id="@+id/categoriesLine0"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/categoriesHeader"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="22dp"
+        android:background="@color/grey" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/categoriesScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/categoriesLine0">
+
+        <RelativeLayout
+            android:id="@+id/categoriesContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <RelativeLayout
+                android:id="@+id/CategoriesContainer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CategoriesContainer1"
+                android:layout_marginLeft="7.5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="7.5dp" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
